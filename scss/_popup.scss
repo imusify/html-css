@@ -1,0 +1,32 @@
+.popup{ position: fixed; display: block; width: 100%; height: 100%; top: 0; left: 0; z-index: 9; overflow: hidden;
+  transform: scale(0);
+
+  &.show{transform: scale(1);
+    .popup-bg{ opacity: .95;}
+    .popup-scroll{ transform: perspective(1600px) scale(1) rotate3d(0,1,0,0deg); transform-origin: 50% 0; opacity: 1;}
+  }
+
+  .popup-close{ position: absolute; display: block; width: 32px; height: 32px; right: 20px; top: 20px; opacity: .6; z-index: 2;
+    font-size: 0;
+    transition: opacity .15s ease;
+    &:before,&:after{ content: ''; position: absolute; display: block; width: 100%; height: 1px; background: $white; top: 50%; left: 0; right: 0;}
+    &:before{transform: rotate(-45deg);}
+    &:after{transform: rotate(45deg);}
+
+    &:hover{ opacity: .8;}
+    &:active{ opacity: 1;}
+  }
+
+  .popup-bg{ position: absolute; display: block; width: 100%; height: 100%; top: 0; left: 0; background: $black0d; opacity: 0; z-index: 0;
+    transition: opacity .35s ease; }
+
+  .popup-scroll{ position: absolute; display: block; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; overflow: auto;
+    transform: perspective(1600px) scale(.8) rotate3d(0,1,0,45deg); transform-origin: 50% 0; opacity: 0;
+    transition: all .35s cubic-bezier(0.25, 0.1, 0.6, 1.32);
+    .scroll-bg{ position: fixed; display: block; z-index: 0; top: 0; left: 0; right: 0; width: 100%; height: 9999%;}
+  }
+  .popup-inner{ position: relative; display: block; width: 96%; max-width: 948px; padding: 50px 0; min-height: 888px; margin: 0 auto; z-index: 1;
+    &.news-inn{ padding: 0 60px; max-width: 1440px; box-sizing: border-box;}
+  }
+
+}

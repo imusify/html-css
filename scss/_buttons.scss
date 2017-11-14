@@ -1,0 +1,93 @@
+//Action buttons
+
+.action-btns { position:relative; display:inline-block; width:100%; padding:9px 0; font-size:17px; line-height:17px; color:$white; }
+.action-btn{ position: relative; display: inline-block; vertical-align: top; width: 120px; padding: 0; opacity: .8; z-index: 1;
+  color: $white; font-size: 12px; line-height: 18px; text-transform: uppercase;
+  &.active { cursor: default; }
+  &::before{ content: ""; position:relative; display: inline-block; vertical-align: top; margin: -1px 5px 0 0; height: 17px; opacity: 0.8;
+    transition: opacity .15s ease-in-out;}
+
+  &:last-child::after { display: none; }
+
+  &.like:before { width: 17px; background: url("img/feed-boxes/like.svg") 50% 50% no-repeat; }
+  &.share:before{ width: 16px; background: url("img/feed-boxes/share.svg") 50% 50% no-repeat;}
+  &.add:before{ width: 17px; background: url("img/feed-boxes/add.svg") 50% 50% no-repeat;}
+  &.edit:before{ width: 17px; background: url("img/profile-icons/settings.svg") 50% 50% no-repeat;}
+  &.repost:before{ width: 21px; background: url("img/buttons/repost.svg") 50% 50% no-repeat;}
+
+  &.like.active:before { background: url("img/buttons/like-active.svg") 50% 50% no-repeat; cursor: default; }
+  &.share.active:before{ width: 16px; background: url("img/feed-boxes/share.svg") 50% 50% no-repeat;}
+  &.add.active:before{ width: 17px; background: url("img/feed-boxes/add.svg") 50% 50% no-repeat;}
+  &.edit.active:before{ width: 17px; background: url("img/profile-icons/settings.svg") 50% 50% no-repeat;}
+  &.repost.active:before{ width: 21px; background: url("img/buttons/repost.svg") 50% 50% no-repeat;}
+
+  &:hover{ opacity: 1; }
+  &:active{
+    &:before{ opacity: 1;}
+  }
+}
+
+//Article boxes
+
+.article-boxes{};
+
+.article-box{position:relative;width:260px;height:40px;margin:10px;padding:10px;background-color:rgb(37,37,38);
+    &:hover { background-color: rgb(54, 54, 55); }
+    &:hover::before { border-right: 6px solid rgb(54, 54, 55);}
+
+  &::before {content:''; display:block; position:absolute; top:5px; left:-11px; border:6px solid transparent; border-right:6px solid rgb(37,37,38)}
+
+  &:after { content:"" ;display:block; position:absolute; top:5px; left:-18px; width:8px; height:8px; border-radius:50%; background-color:$white; opacity:.2}
+
+  .article-title  {margin:0 0 10px 10px; width:215px; text-align:left; white-space:nowrap; overflow:hidden; text-overflow:clip; font-size:15px; font-weight:100; color:$white}
+
+  .article-link { float:right; font-size:10px; color:rgba(255,255,255,0.2); text-decoration:underline; line-height:1.2; text-align:left; text-transform:uppercase; transform:matrix(0.99861904412254,0,0,0.99980411933372,0,0)}
+}
+
+//Add new playlist
+
+.action-btn.big { width: 160px; text-align: left; opacity: .6;
+  &:hover { opacity: .8; }
+  &:active { opacity: 1; }
+  &::before { position: absolute; right: 0; top: -50%; width: 38px; height: 37px; }
+  &::after { display: none; }
+  &.add::before { background-size: contain;}
+}
+
+//People
+.people { display: flex; align-items: center; justify-content: space-between; width: 300px;
+  .people-img { width: 57px; height: 58px; border-radius: 50%; background: url("img/buttons/people-img.png"); }
+  .people-name { flex-basis: 135px; font-size: 14px; line-height: 1.929; opacity: .4;
+    &:hover { opacity: .8; }
+  }
+}
+.follow-btn { width: 86px; height: 21px; background-color: rgba(0, 0, 0, 0.2);
+   border: 1px solid rgba(255, 255, 255, .4); border-radius: 5px; font-size: 10px; line-height: 1.2; text-transform: uppercase;
+  &:hover { border-color: rgba(255, 255, 255, .6); }
+  &:active,
+  &.active { border-color: rgba(255, 255, 255, .8); border-color: rgb(234, 63, 79); }
+}
+
+//Follow & Upload buttons
+
+.follow-btn {
+  &.big { width: 157px; height: 40px; font-size: 14px; line-height: 40px;}
+}
+
+.upload-btn {
+  @extend .follow-btn;
+  position: relative;
+  padding-right: 25px;
+  background-color: rgba(0, 0, 0, 0.1);
+  &:hover {background-color: rgba(0, 0, 0, 0.15);
+    &:before, &:after { opacity: .8; }
+  }
+  &:active {background-color: rgba(0, 0, 0, 0.2);
+    border-color: $white;
+    &:before, &:after  { opacity: 1; }
+  }
+  &:before,&:after{content: ""; position: absolute; top: 0; bottom: 0; margin: auto; right: 10px; width: 19px; height: 19px; opacity: .6;
+    box-sizing: border-box;}
+  &:before { background: url("img/buttons/upload-btn.svg") 50% 45% no-repeat; }
+  &:after { border: 1px solid $white; border-radius: 50%; }
+}

@@ -1,0 +1,82 @@
+.edit-block { @extend .sign-block;
+    .edit-inner { display: inline-flex; margin-top: 50px;
+        .user-img { width: 300px;
+            img { width: 80%; }
+            #userImg { display: none; }
+        }
+    }
+    .img-upload { position: relative; display: inline-block; vertical-align: middle; width: 80%; height: 46px; margin-top: 20px; padding: 0 15px; text-align: center;
+        box-sizing: border-box;
+        background: #EA3F4F; border-radius: 3px; font-size: 12px; line-height: 46px; letter-spacing: .05em; color: #fff; cursor: pointer;
+        &:hover { background: #e7283a; }
+    }
+    .edit-form { @extend .sign-form; display: flex; flex-wrap: wrap; justify-content: space-between;
+        .inp-block{ width: 47%; margin: 0;}
+        .inp-block.sbmt{ width: 112px;
+            button{ white-space: nowrap;}
+        }
+        textarea{ height: 120px; resize: none;}
+        .big { width: 100%; margin-top: 20px; }
+        .medium { width: calc(100% - 135px);}
+        .sbm-block{ margin-top: 0; }
+    }
+    select, textarea { @extend input; }
+    select#selectCountry, select#selectState, select#selectCity { color: rgba(255, 255, 255, .6); }
+    select#selectState { padding-right: 12%; }
+    select#selectCity { padding-right: 20%; }
+    option { background-color: #000; color: rgba(255, 255, 255, .4); }
+    input#birthDate {color: rgba(255, 255, 255, .6);}
+
+    //Select2
+    .select2-container { position: relative; display: inline-block; width: 226px!important; box-sizing: border-box; margin: 0; margin-right: 20px; vertical-align: middle; font-weight: 300; }
+    .select2-container--default .select2-selection--single{ box-sizing: border-box; height: 40px; padding-left:0; line-height: 40px; border: 1px solid rgba(255,255,255,.4); background-color: transparent; outline: none;
+        &:hover { border: 1px solid rgba(255,255,255,.8); }
+    }
+
+    .select2-selection.select2-selection--single:hover { background-color: transparent; }
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered { padding-left: 10px; text-align: left; line-height: 20px; color: rgba(255, 255, 255, .8); }
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow { top: 5px; background: transparent; }
+}
+
+.inp-block-dropdown { display: block; padding: 10px 0 10px 5px; font-size: 14px; line-height: 1em; font-weight: 300; text-transform: none!important; white-space: pre;  background-color: #000!important; color: rgba(255,255,255,.4);
+    .select2-results__option--highlighted[aria-selected] { background-color: #3c3d3e!important; color: $white;}
+    .select2-results__option[aria-selected=true] { background-color: #242526!important; }
+}
+@media screen and (min-width: 721px) and (max-width: 1024px) {
+  .edit-block {
+    .select2-container { width: 100%!important; margin-bottom: 20px; }
+    .edit-form {
+      .inp-block {width: 90%;}
+      .big {margin-top: inherit;}
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .edit-block{
+    .edit-form { max-width: 600px; }
+    .edit-inner { display: flex; flex-wrap: wrap; }
+    .user-img { margin: auto; margin-bottom: 50px;}
+    .select2-container { width: 100%!important;}
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .edit-block{
+    .edit-form { width: 100%;
+      .inp-block{ width: 100%; margin: 0 30px 0 20px;}
+    }
+    .select2-container { width: 100%!important; margin-bottom: 20px; }
+  }
+  .popup .popup-close { width: 20px; height: 20px; }
+}
+
+
+@media screen and (max-width: 400px) {
+  .edit-block .title { width: 200px; margin: auto; }
+  .edit-block .edit-inner .user-img { width: 280px; }
+}
+
+

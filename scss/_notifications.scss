@@ -1,0 +1,82 @@
+#notifications {
+  @extend #playlist;
+  max-width: 1000px;
+  padding-bottom: 100px;
+
+  .tit-playlist { padding-bottom: 35px; }
+  .foll-left { width: 70%; padding: 0 140px 20px 50px; }
+  .foll-top {display: flex; }
+  .foll-top .foll-tit { max-width: 300px;
+     margin: auto 0; padding-left: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .foll-tit span { opacity: .4; }
+  .follow-one { margin-bottom: 35px;
+    &:hover {
+      .notes-close { opacity: .6;
+        &:hover { opacity: .8;}
+        &:active { opacity: 1}
+      }
+    }
+  }
+  .follow-one .author { width: 200px; left: -220px; }
+  .foll-comm-one .mess { margin-top: -40px; }
+  .foll-right { position: absolute; top: 0; right: 60px; width: 320px;}
+  .user { display: flex; max-width: 250px; height: 70px; padding: 5px 0 5px 0; overflow: hidden;
+    .prof-status { top: 50px; left: 55px; }
+    .img-box i::before { top: 46px; right: auto; left: 51px; }
+  }
+  .user-img img { display: inline-block; margin-top: 18%; margin-right: 10px; width: 50px; height: 50px; border-radius: 100%; }
+  .user-name { display: inline-block; margin: auto 0; font-size: 14px; line-height: 18px; letter-spacing: -.025em; color: $white;  opacity: .4;
+    &:hover { opacity: .8;
+      span { border-bottom: 1px solid rgba(255,255,255,1); }
+    }
+    span { position: relative; display: inline; z-index: 1; line-height: 10px; border-bottom: 1px solid rgba(255,255,255,0); transition: border .25s ease;}
+  }
+  .notes-close{ position: absolute; display: block; width: 15px; height: 15px; right: 12px; top: 7px; opacity: 0; z-index: 2; font-size: 0; transition: opacity .15s ease;
+    &:before,&:after{ content: ''; position: absolute; display: block; width: 100%; height: 1px; background: $white; top: 50%; left: 0; right: 0;}
+    &:before{transform: rotate(-45deg);}
+    &:after{transform: rotate(45deg);}
+  }
+}
+
+.popup-close{ position: absolute; display: block; width: 22px; height: 22px; right: 20px; top: 20px; opacity: .6; z-index: 2;
+  font-size: 0;
+  transition: opacity .15s ease;
+  &:before,&:after{ content: ''; position: absolute; display: block; width: 100%; height: 1px; background: $white; top: 50%; left: 0; right: 0;}
+  &:before{transform: rotate(-45deg);}
+  &:after{transform: rotate(45deg);}
+
+  &:hover{ opacity: .8;}
+  &:active{ opacity: 1;}
+}
+
+.notifications-after { position: absolute; display: block; width: 100%; height: 100%; top: 0; left: 0; z-index: 7; background: #121314; transform: scale(0); opacity: 0; transition: transform 0s linear .5s,opacity .5s cubic-bezier(.39,.575,.565,1); }
+
+#notifications.show+.notifications-after { transform: scale(1); opacity: .75; transition: transform 0s linear,opacity .3s cubic-bezier(.39,.575,.565,1) .1s; }
+
+@media screen and (max-width: 1100px) {
+  #notifications { max-width: 700px;
+    .notifications-inner { display: flex; flex-wrap: wrap; }
+    .foll-right { position: static; order: 1; width:90%; margin: 0 auto 30px; }
+    .foll-r-one .r-one-body { padding: 20px 20px 0 20px; }
+    .foll-left { position: static; order: 2; width: 90%; margin: auto; padding: 0 0 100px; }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  #notifications {
+    .foll-right,.foll-left { width: 100%; }
+    .tit-playlist span {font-size: 28px;}
+  }
+}
+
+@media screen and (max-width: 380px) {
+  #notifications {
+    .foll-top {  flex-wrap: wrap; padding: 0 15px;
+      .foll-tit { margin-top: -40px; padding-left: 60px;     padding-right: 50px; }
+    }
+    .user-name { margin: 15px 0 0; }
+  }
+}
+
+
+

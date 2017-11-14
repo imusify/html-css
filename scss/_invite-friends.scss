@@ -1,0 +1,45 @@
+.invite-block { @extend .edit-block; }
+.invite-inner { @extend .edit-inner; }
+.invite-img { @extend .user-img; width: auto; }
+.invite-form { @extend .edit-form; }
+
+.invite-block {
+  .invite-inner { display: flex; flex-wrap: wrap; width: 75%; margin: auto; margin-top: 50px;
+    .invite-img { position: relative; width: 180px; height: 180px; margin: auto; line-height: 21; background-color: #EA3F4F;
+      .mail-ico { position: absolute; top: -15%; right: 0; left: 0; bottom: 0; width: 80px; height: 80px; margin: auto; background: url(img/profile-icons/email.svg) no-repeat; background-size: contain; }
+    }
+    .inp-block-title { width: 100%; margin-bottom: 20px; text-align: left; line-height: 20px; font-weight: 300; font-size: 14px; text-transform: uppercase; color: #fff; opacity: .4; }
+    .inp-block { margin-bottom: 0;
+      .sbm-block { width: 150px; margin-top: 60px !important; margin-left: 104%; }
+    }
+    .invite-form { justify-content: space-between;
+      input#fiendsEmail { width: 265%; }
+      label { width: 250px; }
+    }
+  }
+}
+
+@media screen and (max-width:1024px){
+  .invite-block {
+    .invite-inner { width: 60%;
+      input#fiendsEmail {  width: 110%!important; }
+    }
+  }
+  .invite-block .invite-inner .inp-block .sbm-block { position: absolute; top: -60px; right: -80px; }
+}
+
+@media screen and (max-width:767px){
+  .invite-block .invite-form .inp-block { width: 90%; margin: 0; }
+  .invite-block .title { font-size: 44px; }
+  .invite-block .invite-inner .invite-form label { width: inherit;}
+  .invite-block .invite-inner .invite-img {margin-bottom: 20px; }
+}
+
+@media screen and (max-width:530px){
+  .invite-block {
+      input#fiendsEmail {  margin-top: 20px; }
+  }
+}
+
+
+

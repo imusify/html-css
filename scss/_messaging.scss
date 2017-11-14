@@ -1,0 +1,174 @@
+#messaging {
+  @extend #playlist;
+  max-width: 1000px;
+  .popup-close{ top: 12px;}
+  .inner-scroll{ box-sizing: border-box; padding-left: 240px; padding-bottom: 120px; padding-top: 50px; overflow: hidden; }
+  .tit-playlist { position: absolute; display: block; top: 0; left: 240px; right: 0; padding-top: 10px;
+    span{ font-size: 24px; }
+  }
+  .foll-left { width: 100%; height: 100%; padding: 0 40px; overflow-y: auto; }
+  .foll-top {display: flex; flex-wrap: wrap;}
+  .foll-top .foll-tit { max-width: 300px;
+     margin: auto 0; padding-left: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .foll-tit span { opacity: .4; }
+  .foll-r-one{ margin: 0;
+    .r-one-top{ position: absolute; top: 0; left: 0; right: 0; padding: 0 10px 0 20px; font-size: 14px; height: auto; line-height: 50px;}
+    .r-one-body{ height: 100%; overflow-y: auto; box-sizing: border-box;}
+    .peop-one{ padding: 20px 20px 20px 75px; margin-bottom: 0;
+      transition: background .25s ease; background: transparent;
+      .img{ left: 10px; top: 0; bottom: 0;}
+      &:hover,&.active{ background: #2d2e31; }
+    }
+    .r-one-body{ padding: 10px 0; }
+  }
+  .foll-top .foll-time{ right: 25px; bottom: auto; top: 7px; }
+
+  .follow-one { margin-bottom: 0;
+    &:hover {
+      .notes-close { opacity: .6;
+        &:hover { opacity: .8;}
+        &:active { opacity: 1}
+      }
+    }
+    .author { width: 200px; left: -220px; }
+  }
+  .foll-comm-one{ max-width:90%; display: inline-block; padding: 10px; text-align: left;
+    .time{ left: 10px; bottom: -15px; right: auto; top: auto; }
+    .name{ padding: 0 50px; }
+  }
+
+  .foll-right { position: absolute; top: 0; left: 0; width: 240px; bottom: 0; right: auto; overflow: hidden; padding: 60px 0 0;}
+  .user { display: flex; max-width: 250px; height: 70px; padding: 5px 0 5px 0; overflow: hidden; }
+  .user-img img { display: inline-block; margin-top: 18%; margin-right: 10px; width: 50px; height: 50px; border-radius: 100%; }
+  .user-name { display: inline-block; margin: auto 0; font-size: 14px; line-height: 18px; letter-spacing: -.025em; color: $white;  opacity: .4;
+    &:hover { opacity: .8;
+      span { border-bottom: 1px solid rgba(255,255,255,1); }
+    }
+    span { position: relative; display: inline; z-index: 1; line-height: 10px; border-bottom: 1px solid rgba(255,255,255,0); transition: border .25s ease;}
+  }
+
+  .one-mess{ text-align: left; margin-bottom: 35px;
+    &.from-me{ text-align: right;
+      .foll-comm-one{ text-align: right;
+        .img{ left: auto; right: 0; }
+        .time{ right: 10px; left: auto; }
+        .name{ text-align: left;
+          .img-box { left: auto; right: 0;
+            i::before { right: -2px; }
+          }
+        }
+        .mess{ text-align: left; padding-right: 50px; padding-left: 15px; }
+        .prof-status-bg, .prof-status  { right: 0; left: inherit; }
+      }
+      .notes-close{ right: auto; left: 8px; }
+    }
+    .prof-name { display: block!important; margin-top: -20px; }
+  }
+  .notes-close{ position: absolute; display: block; width: 15px; height: 15px; right: 8px; top: 8px; opacity: 0; z-index: 2; font-size: 0; transition: opacity .15s ease;
+    &:before,&:after{ content: ''; position: absolute; display: block; width: 100%; height: 1px; background: $white; top: 50%; left: 0; right: 0;}
+    &:before{transform: rotate(-45deg);}
+    &:after{transform: rotate(45deg);}
+  }
+  .add-new-message{ position: absolute; display: block; right: 20px; left: 260px; bottom: 20px; height: 80px; padding: 0 50px 0 0;
+    box-sizing: border-box;
+    border-radius: 4px; border: 1px solid rgba(255,255,255,.35);
+
+    textarea{ position: relative; display: block; width: 100%; height: 100%; z-index: 1;
+      padding: 5px 10px 5px 28px; background: rgba(255,255,255,0.1); border: none; resize: none; outline: none;
+      color: #fff; font-size: 12px; line-height: 16px;
+      box-sizing: border-box; }
+    button[type="submit"]{ position: absolute; display: block; right: 0; top: 0; bottom: 0; width: 50px; margin: auto; background: $pink; padding: 5px 10px;
+      font-size: 12px; line-height: 20px; color: #fff; z-index: 2;}
+
+    .emoji-wrap{ position: absolute; display: block; width: 25px; height: 100%; top: 0; left: 0; z-index: 2;
+      &:hover{
+        .emoji-popup{ transform: scale(1); opacity: 1; margin-bottom: 5px;
+          transition: transform 0s linear 0s, opacity .25s ease 0s, margin .25s ease 0s;}
+      }
+    }
+    button.emoji{ position: absolute; display: block; width: 18px; height: 18px; top: 5px; left: 5px; z-index: 2;
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%22410%2020%2024%2024%22%3E%3Cdesc%3E%20Created%20with%20Sketch.%3C%2Fdesc%3E%3Cg%20fill%3D%22none%22%3E%3Crect%20x%3D%22410%22%20y%3D%2220%22%20width%3D%2224%22%20height%3D%2224%22%2F%3E%3Cpath%20d%3D%22M422%2039.5L422%2039.5C426.1%2039.5%20429.5%2036.1%20429.5%2032%20429.5%2027.9%20426.1%2024.5%20422%2024.5%20417.9%2024.5%20414.5%2027.9%20414.5%2032%20414.5%2036.1%20417.9%2039.5%20422%2039.5L422%2039.5ZM422%2041C417%2041%20413%2037%20413%2032%20413%2027%20417%2023%20422%2023%20427%2023%20431%2027%20431%2032%20431%2037%20427%2041%20422%2041ZM419%2036.1C419.7%2036.6%20420.7%2037%20422%2037%20423.3%2037%20424.3%2036.6%20425%2036.1%20425.5%2035.8%20425.8%2035.4%20425.9%2035.1%20426.1%2034.7%20426%2034%20426%2034%20426%2034%20418%2034%20418%2034%20418%2034%20417.9%2034.7%20418.1%2035.1%20418.2%2035.4%20418.5%2035.8%20419%2036.1ZM419%2032C419.6%2032%20420%2031.3%20420%2030.5%20420%2029.7%20419.6%2029%20419%2029%20418.4%2029%20418%2029.7%20418%2030.5%20418%2031.3%20418.4%2032%20419%2032ZM425%2032C425.6%2032%20426%2031.3%20426%2030.5%20426%2029.7%20425.6%2029%20425%2029%20424.4%2029%20424%2029.7%20424%2030.5%20424%2031.3%20424.4%2032%20425%2032Z%22%20fill%3D%22%23828A99%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+    .emoji-popup{ position: absolute; display: block; bottom: 100%; left: 0; width: 200px; height: 140px; padding: 5px; z-index: 3;
+      box-sizing: border-box; border-radius: 4px;
+      background: #1e1e1f url('img/emoji.png') 50% 50% no-repeat; background-size: contain;
+      box-shadow: 0 0 25px 5px rgba(0,0,0,.5);
+      transform: scale(0); opacity: 0; margin-bottom: 0;
+      transition: transform 0s linear .25s, opacity .25s ease 0s, margin .25s ease 0s;
+      &:before { content: ''; position: absolute; bottom: -19px; left: 5px;
+        border: 10px solid transparent; border-top: 10px solid #1e1e1f; }
+    }
+  }
+}
+
+.popup-close{ position: absolute; display: block; width: 22px; height: 22px; right: 20px; top: 20px; opacity: .6; z-index: 2;
+  font-size: 0;
+  transition: opacity .15s ease;
+  &:before,&:after{ content: ''; position: absolute; display: block; width: 100%; height: 1px; background: $white; top: 50%; left: 0; right: 0;}
+  &:before{transform: rotate(-45deg);}
+  &:after{transform: rotate(45deg);}
+
+  &:hover{ opacity: .8;}
+  &:active{ opacity: 1;}
+}
+
+.messaging-after { position: absolute; display: block; width: 100%; height: 100%; top: 0; left: 0; z-index: 7; background: #121314; transform: scale(0); opacity: 0; transition: transform 0s linear .5s,opacity .5s cubic-bezier(.39,.575,.565,1); }
+
+#messaging.show+.messaging-after { transform: scale(1); opacity: .75; transition: transform 0s linear,opacity .3s cubic-bezier(.39,.575,.565,1) .1s; }
+
+@media screen and (max-width: 1024px) {
+  #messaging {
+    .foll-right {width: 210px; height: 98.5%; }
+    .foll-left{ padding: 0; }
+    .add-new-message { left: 235px; }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #messaging { height: 100%; padding-bottom: inherit;
+    .inner-scroll { padding-left: 200px;}
+    .foll-comm-one .img, .foll-r-one .peop-one .img { width: 32px; height: 32px; }
+    .add-new-message { left: 200px; bottom: 70px; }
+    .foll-left { height: 90%;}
+    .foll-right { width: 170px; padding-bottom: inherit; }
+    .foll-r-one .peop-one i::before { top: 19px; right: -3px; width: 12px; height: 12px; }
+    .foll-r-one .peop-one .prof-status { top: 22px; left: 27px; width: 7px; height: 7px; }
+    .foll-comm-one i::before { top: 20px; right: 10px; width: 12px; height: 12px; }
+    .foll-comm-one .prof-status { top: 23px; left: 22px; width: 7px; height: 7px; }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  #messaging { height: 95%;
+    .inner-scroll { margin-top: 30px; padding-left: 0; padding-bottom: 150px;}
+    .popup-close { top: 30px; }
+    .tit-playlist { left: 100px; }
+    .foll-left {left: 0; margin-top: 25px;}
+    .foll-right { width: 150px; height: 50px; padding-bottom: initial;
+      &.show { width: 100%; height: 100%; z-index: 2;
+        .r-one-top::after { transform: none;}
+      }
+    }
+    .foll-r-one .peop-one { padding: 20px 20px 20px 80px;}
+    .foll-r-one .peop-one .img { left: 20px; }
+
+    .r-one-top {
+      &:hover {
+        &::before, &::after  { opacity: .8; }
+      }
+      &::before { content: ''; position: absolute; top: 15px; right: 10px; width: 12px; height: 12px; border: 1px solid $white; border-radius: 100%; opacity: .6; cursor: pointer;
+      }
+      &::after { content: ''; position: absolute; top: 18px; right: 13px; width: 8px; height: 8px; background: url(img/buttons/upload-btn.svg) 50% 45% no-repeat; background-size: contain; opacity: .6; transform: rotate(180deg); cursor: pointer; }
+    }
+    .add-new-message { left: 0; right: 0; width: 90%; margin: auto; }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #messaging {
+    .tit-playlist { left: 170px; width: 50px; }
+  }
+}
+

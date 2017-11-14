@@ -1,0 +1,59 @@
+.gui-header.feed-colors {
+  margin-top: 47px;
+}
+
+.feed-colors {
+
+ }
+
+.feed-color {
+  position: relative;
+  display: inline-block;
+  width: 116px;
+  margin: 37px -12px auto 34px;
+  padding-left: 28px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  line-height: 1.36;
+  text-transform: uppercase;
+  font-weight: 100;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 25px;
+    width: 2px;
+    height: 55px;
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+.feed-color.red {
+  &::before {
+    background-color: rgb(234, 63, 79);
+  }
+}
+
+.feed-color.yellow {
+    &::before {
+      background-color: rgb(250, 182, 19);
+    }
+}
+
+.feed-color.green {
+    &::before {
+      background-color: rgb(138, 208, 64);
+    }
+}
+
+.feed-color.violet {
+    &::before {
+      background-color: rgb(104, 64, 208);
+    }
+}
+
+
+
+
+

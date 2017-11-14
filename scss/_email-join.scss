@@ -1,0 +1,37 @@
+.eJoin-img { position: relative; width: 180px; height: 180px; margin: auto; margin-top: 0; line-height: 21; background-color: #EA3F4F;
+  .mail-ico { position: absolute; top: -15%; right: 0; left: 0; bottom: 0; width: 80px; height: 80px; margin: auto; background: url(img/profile-icons/email.svg) no-repeat; background-size: contain; }
+}
+.eJoin-block { @extend .edit-block;}
+.eJoin-inner { @extend .edit-inner; width: 80%; }
+.eJoin-form { @extend .edit-form;
+  .inp-block:nth-child(6) {
+    #selectGender { color: rgba(255, 255, 255, .6); }
+  }
+  .inp-block:nth-child(9){ width: 100%; border-top: 1px solid rgba(189,189,189,.2);
+    input#privacyPolicy { display: none; }
+  }
+  .inp-block:last-child { display: flex; justify-content: flex-end; width: 100%; }
+  .policy-label{ position: relative; display: block; width: 100%; padding-left: 25px; cursor: pointer; margin-bottom: 20px;
+    box-sizing: border-box; user-select: none; opacity: .6!important;
+    input{ display: none;}
+    input:checked ~ i:after{ opacity: 1;}
+    input:checked ~ span{ opacity: 1;}
+    span{ position: relative; display: block;
+      transition: opacity .35s ease; color: $white;
+      font-weight: 300; font-size: 14px; line-height: 20px; text-align: left;}
+    i{ position: absolute; display: block; width: 16px; height: 16px; top: 0; left: 0; bottom: 0; margin: auto;
+      &:before, &:after{ content: ''; position: absolute; display: block; top: 0; left: 0; right: 0; bottom: 0; margin: auto;
+        box-sizing: border-box; }
+      &:before{ border: 1px solid rgba(255, 255, 255, .6); }
+      &:after{ width: 10px; height: 10px; background: $pink; opacity: 0;
+        transition: opacity .25s ease; }
+    }
+    &:hover{
+      span{ opacity: 1; }
+    }
+  }
+  .privacy-info { @extend .tit-info; text-transform: initial; padding-right: 20px; margin: 30px 0;}
+  .is-signed { @extend .privacy-info; margin-top: 50px; font-size: 14px; }
+}
+
+

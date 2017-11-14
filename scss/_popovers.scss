@@ -1,0 +1,27 @@
+.popover{ position: absolute; display: block; width: auto; height: auto; top: 100%; left: 0; margin: 2px 0 0 2px; z-index: 99;
+  /* top */
+  &.top{
+    transition: transform 0s linear, opacity .25s ease, top .4s cubic-bezier(.39,.575,.565,1);
+    &:before{ content: ''; position: absolute; display: block; width: 0; height: 0; top: -8px; left: 10px; z-index: 1;
+      border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 8px solid #232425;}
+    &:not(.show){ top: 50%; transform: scale(0); opacity: 0;}
+    &.show{ transform: scale(1); opacity: 1;}
+  }
+  /*******/
+
+  &:after{ content: ''; position: absolute; display: block; top: 0; left: 0; right: 0; bottom: 0; background: #232425; z-index: 0;
+    border-radius: 4px;
+    box-shadow: 2px 2px 25px rgba(0,0,0,.6);}
+  .inner{ position: relative; display: block; z-index: 5;}
+
+  .inn-list{ position: relative; display: block; width: 100%; list-style: none; padding: 12px 15px; margin: 0; text-align: left;
+    li{ position: relative; display: block;
+      &:not(:first-child){ margin-top: 10px; }
+    }
+    a{ position: relative; opacity: .6; border-bottom: 1px solid transparent;
+      color: $white; font-size: 14px; line-height: 15px; font-weight: 300; white-space: nowrap;
+      &:hover{ opacity: .8; border-bottom-color: $white;}
+      &:active{ opacity: 1;}
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.queue-table-wrap { display: block; position: absolute; right: 25px; z-index: 2;
+  transform: scale(0); opacity: 0; bottom: 100px;
+  transition: transform 0s linear .25s, opacity .25s ease, bottom .25s ease;
+  &.active { bottom: 65px; opacity: 1; transform: scale(1);
+    transition: transform 0s linear, opacity .35s ease, bottom .5s $cubicLight;}
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-button:start:decrement,
+  ::-webkit-scrollbar-button:end:increment { display: block; height: 0; background-color: transparent; }
+  ::-webkit-scrollbar-track-piece { background-color: transparent; }
+  ::-webkit-scrollbar-thumb { -webkit-border-radius: 3px; background-color: rgba(255, 255, 255, 0.102);}
+
+  .song-table{
+    tbody tr{
+      &:hover{ background: #232325; cursor: pointer;
+        td{ color: $white;}
+      }
+    }
+  }
+}
+
+.song-table { background: #1e1e1f; font-weight: 100;
+
+  thead { display: block; background: #1a1b1b;
+    th { text-transform: uppercase; font-weight: 100; color: rgba(255, 255, 255, 0.6); }
+  }
+  tbody { display: block; position: relative; overflow-y: scroll;
+    tr:nth-child(even) { background-color: #1a1b1b; }
+  }
+  .active { border-left: 2px solid rgb(234, 63, 79); }
+  td, th { flex-grow: 2; margin: auto; color: #999;
+    transition: color .25s ease;}
+  tr { display: flex; height: 50px; text-align: left; font-size: 16px;
+    transition: background .8s $cubicLight;}
+  td{ font-weight: 300;}
+
+  &.artists { position: relative; width: 330px; box-shadow: 2px 15px 46px 12px rgba(0,0,0,0.8);
+    &::after, &::before { content: ''; position: absolute; right: 60px; bottom: -8px; width: 15px; height: 15px; background-color: #1d1d1f; box-shadow: 2px 15px 46px 12px rgba(0,0,0,0.8); transform: rotate(45deg); }
+    &::after { z-index: -1; }
+    &::before { z-index: 1; box-shadow: none; }
+    tbody { max-height: 400px;}
+    td, th { flex-basis: 100%; padding-left: 20px; white-space: nowrap; overflow: hidden; width: 140px; height: 20px; text-overflow: ellipsis;}
+  }
+}
+
+@media screen and (max-width: 450px){
+  .song-table.artists::before, .song-table.artists::after  { right: 12px!important; }
+  .queue-table-wrap { right: 0; }
+}
+
+@media screen and (max-width: 380px) {
+  .queue-table-wrap.active {right: 0; width: 100%;}
+  .song-table.artists { width: 100%!important;}
+}

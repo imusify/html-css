@@ -1,0 +1,78 @@
+
+.news-title{ position: relative; padding-top: 20%;
+  .img{ position: absolute; display: block; width: 65%; right: 5%; top: 0; max-height: 440px;
+    background-position: 50% 0; background-repeat: no-repeat; background-size: cover;
+    img{ opacity: 0; display: block; width: 100%;}
+    &:after{ content: ''; position: absolute; display: block; width: 100%; height: 80%; bottom: 0; left: 0;
+      background: linear-gradient(90deg, rgba(13,14,14,1) 10%, rgba(13,14,14,0) 100%);
+      background: -moz-linear-gradient(90deg, rgba(13,14,14,1) 10%, rgba(13,14,14,0) 100%);
+      background: -webkit-linear-gradient(90deg, rgba(13,14,14,1) 10%, rgba(13,14,14,0) 100%);
+      background: -o-linear-gradient(90deg, rgba(13,14,14,1) 10%, rgba(13,14,14,0) 100%);
+    }
+  }
+  .date{ position: absolute; display: block; top: 25px; opacity: .2;
+    font-size: 12px; font-weight: 700; text-transform: uppercase;}
+  .name{ margin-bottom: 20px; opacity: .5;
+    font-size: 16px; letter-spacing: -.025em; text-transform: uppercase;
+  }
+  .title{ position: relative; display: block; margin-bottom: 80px;
+    font-size: 80px; line-height: 64px; font-weight: 100; letter-spacing: -.025em;
+  }
+}
+
+.news-block{ position: relative; display: block; margin: 0 0 50px; font-size: 0;
+  .news-desc{ display: inline-block; vertical-align: top; width: 62%; padding-right: 30px;
+    box-sizing: border-box;
+    font-size: 14px; letter-spacing: .01em;
+    .desc-prev{ opacity: .6; margin-bottom: 30px; font-size: 18px; line-height: 32px;}
+    .desc-text{ opacity: .6; font-size: 14px; line-height: 26px;
+      p{ margin: 26px 0 0;
+        &:first-child{ margin-top: 0;}
+      }
+    }
+  }
+  .share-block{ margin-bottom: 45px;
+    .share-one{ position: relative; display: inline-block; vertical-align: top; margin-right: 30px; width: 46px; height: 46px;
+      &:before{ content: ''; position: absolute; display: block; width: 100%; height: 100%; top: 0; left: 0; opacity: .2;
+        transition: opacity .25s ease; box-sizing: border-box; border: 3px solid $white; border-radius: 50%;}
+      background-position: 50% 50%; background-repeat: no-repeat;
+      &.sh-fb{ background-image: url('img/share/fb-ico.svg');}
+      &.sh-tw{ background-image: url('img/share/tw-ico.svg');}
+      &.sh-gp{ background-image: url('img/share/gp-ico.svg');}
+      &.sh-in{ background-image: url('img/share/in-ico.svg');}
+
+      &:hover:before{ opacity: .4;}
+    }
+  }
+
+  .news-right{ position: relative; display: inline-block; vertical-align: top; width: 38%; padding: 40px;
+    box-sizing: border-box;
+    font-size: 14px;
+    &:before{ content: ''; position: absolute; display: block; width: 100%; height: 100%; top: 0; left: 0; background: #19191b; opacity: .4; z-index: 0;}
+
+    .other-tit{ position: relative; display: block; z-index: 1; margin-bottom: 35px;
+      font-size: 15px; line-height: 16px; font-weight: 300; letter-spacing: .05em; text-transform: uppercase;}
+
+    .other-list{ position: relative; display: block; z-index: 1;}
+    .other-one{ position: relative; display: block; width: 100%; margin-bottom: 25px; overflow: hidden;
+      &:before{ content: ''; position: absolute; display: block; width: 100%; height: 100%; bottom: 0; left: 0; z-index: 1;
+        background: linear-gradient(90deg, rgba(18,19,20,0.8) 0%, rgba(18,19,20,0.2) 100%);
+        background: -moz-linear-gradient(90deg, rgba(18,19,20,0.8) 0%, rgba(18,19,20,0.2) 100%);
+        background: -webkit-linear-gradient(90deg, rgba(18,19,20,0.8) 0%, rgba(18,19,20,0.2) 100%);
+        background: -o-linear-gradient(90deg, rgba(18,19,20,0.8) 0%, rgba(18,19,20,0.2) 100%);
+      }
+      img{ position: relative; display: block; width: 100%; margin: 0; z-index: 0; opacity: .4;
+        transition: opacity .25s ease;}
+      .subtit,.title{position: absolute; display: block; width: 100%; left: 0; z-index: 2;
+        box-sizing: border-box;}
+      .subtit{ bottom: 60px; padding: 0 20px; opacity: .8;
+        font-size: 15px; line-height: 16px; letter-spacing: -.025em; color: $white;}
+      .title{  bottom: 0; padding: 10px 20px 20px;
+        font-size: 40px; line-height: 30px; font-weight: 100; letter-spacing: -.025em; color: $white;}
+      &:hover{
+        img{ opacity: .6;}
+      }
+    }
+  }
+
+}

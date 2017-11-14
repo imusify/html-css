@@ -1,0 +1,51 @@
+.gui-header.profile-icons { margin-top: 64px; margin-bottom: 15px;}
+
+.profile-icons { display: flex; flex-wrap: wrap;}
+
+.profile { position: relative; width: 160px; height: 140px; margin: 0 auto 20px;
+  .prof-link:hover .prof-user span{ border-bottom-color: rgba(255, 255, 255, 0.7);}
+}
+.prof-link{
+  .prof-img{ display: block; margin: 0 auto 10px; }
+  .prof-user{
+    text-align: center; font-size: 14px; color: rgb(255, 255, 255); line-height: 1.1;
+    span{ border-bottom: 1px solid rgba(255, 255, 255, 0);
+      transition: border .25s ease;}
+  }
+}
+.prof-notes{ display: block; padding: 0; margin: 20px 0 0; text-align: center;}
+
+.prof-note { position: relative; display: inline-block;
+
+  &:first-child::after, &:nth-child(2)::after  { content:''; position: absolute; top: 0; right: 0; width: 1px; height: 20px;
+    background-color: rgba(255, 255, 255, 0.5); opacity: 0.13; }
+}
+
+.note-link { display:inline-block; width: 40px; height: 21px; opacity: .2;
+  &:hover {opacity: .8;}
+  &:active {opacity: 1;}
+}
+
+.note-link.email-ico { background: url('img/profile-icons/email.svg') no-repeat center;}
+.note-link.alert-ico { background: url('img/profile-icons/alert.svg') no-repeat center;}
+.note-link.settings-ico { background: url('img/profile-icons/settings.svg') no-repeat center;}
+
+  //Alert
+
+.note-link.alert { position: relative; opacity: .6;
+
+  &:hover { opacity: .8;}
+  &:active { opacity: 1;}
+}
+.note-number {position: absolute;top: -6px;right: 3px;width: 16px; height: 16px;
+  border-radius: 50%; background-color: rgb(234, 63, 79);
+  font-size: 10px; line-height: 16px; text-align: center; color: rgb(255, 255, 255);
+}
+
+
+  //Active
+.note-link.active { @extend .note-link.alert; opacity: 1;
+
+  &:hover {opacity: 1;}
+}
+

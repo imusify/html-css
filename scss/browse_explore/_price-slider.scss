@@ -1,0 +1,10 @@
+.price { @extend .duration;
+  &-title { @extend .duration-title; }
+  &-range { @extend .duration-range; }
+  &-start { @extend .duration-start; }
+  &-end { @extend .duration-end; }
+}
+
+div.ui-slider-range.ui-widget-header {
+  background: rgb(234, 63, 79);
+}

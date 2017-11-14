@@ -1,0 +1,154 @@
+.song-flex-table { position: relative; display: block; margin-bottom: 12px;
+
+  .thead{ position: relative; z-index: 0;
+    &:before{ opacity: .2;}
+    .th{ display: block;}
+  }
+  .tbody{ position: relative; display: block; z-index: 1;
+    .tr{ position: relative; cursor: pointer;
+      &:nth-child(even):before { opacity: .2; }
+      &:nth-child(odd):before { opacity: .4; }
+    }
+  }
+  .thead,.tr{ @include flexbox(); justify-content: space-between; align-items: center;
+    height: 50px; padding: 0 10px;
+    &:before{ content: ''; position: absolute; display: block; width: 100%; height: 100%; top: 0; left: 0; z-index: 1;
+      background: #232325;
+      transition: opacity .25s $cubicLight; }
+  }
+  .th { opacity: .6; text-transform: uppercase; }
+
+  .td, .th { width: 14.25%; z-index: 3;
+    box-sizing: border-box; padding: 0 10px;
+    font-size: 15px; line-height: 15px; color: $grey9;
+    transition: color .25s $cubicLight;
+    &:not(:first-child){ position: relative; }
+    &:not(:last-child):not(:first-child){ white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+
+    &:nth-child(1) { flex-basis: 8%; text-align: right; }
+    &:nth-child(2) { flex-basis: 19%; }
+    &:nth-child(3) { flex-basis: 23%; }
+    &:nth-child(4) { flex-basis: 20%; }
+    &:nth-child(5) { flex-basis: 14%; }
+    &:nth-child(6) { flex-basis: 6%; text-align: center; }
+    &:nth-child(7) { flex-basis: 6%; text-align: center; }
+
+  }
+  .tr{ transition: transform .4s $cubicLight;
+    transform: translate(0,0);
+    &:hover{
+      &:nth-child(1n):before{ opacity: 1;}
+      .td{ color: $white;}
+      .td-id span{ opacity: 0; transition: opacity .25s $cubicLight; }
+      .td-id .box-btn{ transform: scale(1); opacity: 1; transition: transform .25s $cubicLight; }
+    }
+    &.slided-right{ transform: translate(430px,0);
+      .wrap-btn-hide{ width: 430px; transform: translate(-430px,0);}
+    }
+    .td-id { position: relative;
+      span { opacity: 1; transition: opacity .125s ease; }
+      .box-btn{ transform: scale(0.4); opacity: 0; transition: all .125s linear;}
+    }
+
+    .popup-checkout{ position: absolute; display: block; width: 315px; height: 74px; top: -70px; left: 55px; padding: 5px 2px 5px 5px;
+      box-sizing: border-box; background-color: #1d1d1f; text-align: left;
+      box-shadow: 0 10px 30px rgba(0,0,0,.8);
+      &:before{ content: ''; position: absolute; display: block; width: 0; height: 0; bottom: -6px; left: 20px;
+        border-top: 6px solid #1d1d1f; border-left: 8px solid transparent; border-right: 8px solid transparent; }
+
+      button{ position: relative; display: inline-block; padding: 3px 5px; margin: 0 3px 3px 0;
+        border: 1px solid #fff; border-radius: 3px; background-color: #1d1d1f;
+        font-size: 12px; line-height: 12px; font-weight: 300; color: rgba(255,255,255,0.75);
+        &:hover{ background-color: $pink; color: rgba(255,255,255,1); }
+      }
+    }
+  }
+  .box-btn { position: absolute; top: -18px; bottom: -18px; right: -10px;  margin: auto; width: 33px; height: 33px; z-index: 2; box-sizing: border-box; overflow: hidden; border-radius: 50%; border: 1px solid rgba(255,255,255,.4);  background: rgba(0,0,0,.4); transition: all 1s ease-in-out;
+    &::after { content: ''; width: 18px; height: 18px; position: absolute; left: 3px; right: 0; margin: auto; top: 0; bottom: 0; opacity: .8; }
+    &.play::after { background: url(img/feed-boxes/play.svg) 50% 50% no-repeat; background-size: contain;}
+    &:hover{ background-color: rgba(0, 0, 0, .1); }
+  }
+  .wrap-btn-hide{position: absolute; display: block; width: 0; height: 100%; top: 0; left: 0; z-index: 0; overflow: hidden;
+    transform: translate(0,0);transition: all .4s $cubicLight;
+    &:before{ content: ''; position: absolute; display: block; top: 0; bottom: 0; right: 0; left: -100px;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.15);}
+  }
+  .action-btns{ position: absolute; display: block; width: 430px; height: 100%; top: 0; left: 0; z-index: 0; overflow: hidden;
+    box-sizing: border-box; padding: 16px 0; color: rgba(255,255,255,0.1); text-align: left; font-size: 22px; white-space: nowrap; font-weight: 100;
+
+    .close{ width: 47px; font-size: 0; opacity: .3;
+      &:before,&:after{ content: ''; position: absolute; display: block; width: 12px; height: 1px; top: 50%; left: 0; right: 0; margin: auto;
+        background: $white;
+        transition: transform .3s $cubicElastic;}
+      &:before{transform: rotate(-45deg);}
+      &:after{transform: rotate(45deg);}
+      &:hover{ opacity: .8; }
+      &:active{ opacity: 1;  }
+    }
+    .like{ width: 100px;}
+    .share{ width: 120px;}
+    .add{ width: 125px;}
+  }
+
+  .action-btn.ellipses,.action-btn.basket{ position: absolute; display: block; width: 35px; top: 0; bottom: 0;}
+  .action-btn.ellipses{ left: 10px;}
+  .action-btn.basket{ left: 65px;
+    &:after { content: ''; position: absolute; width: 1px; height: 18px; top: 0; left: -11px; bottom: 0; margin: auto; background: $white; opacity: .1; }
+  }
+  .action-btn.ellipses:before { width: 20px; background: url("img/song-lists/ellipses.svg") 50% 50% no-repeat;}
+  .action-btn.basket:before { width: 23px; height: 23px; background: url("img/song-lists/basket.svg") 50% 50% no-repeat;}
+
+  .ico-time { height: 100%; background: url("img/song-lists/time.svg") 50% 50% no-repeat; }
+  .ico-like { height: 100%; background: url("img/buttons/like.svg") 50% 50% no-repeat; opacity: .2; }
+
+  .ico-wave {position: relative; display: inline-block; vertical-align: top; width: 35px; height: 23px;
+    background: url('img/feed-boxes/wave-min.svg') 0 0 no-repeat;
+    &:before{ content: ''; position: absolute; display: block; top: 0; left: 0; height: 100%; width: 0;
+      transition: all .25s ease;
+      background: url('img/feed-boxes/wave-min-h.svg') 0 0 no-repeat;
+    }
+    &.wave-100:before{ width: 100%; }
+    &.wave-90:before{ width: 90%;}
+    &.wave-80:before{ width: 80%;}
+    &.wave-70:before{ width: 70%;}
+    &.wave-60:before{ width: 60%;}
+    &.wave-50:before{ width: 50%;}
+    &.wave-40:before{ width: 40%;}
+    &.wave-30:before{ width: 30%;}
+    &.wave-20:before{ width: 20%;}
+    &.wave-10:before{ width: 10%;}
+  }
+  //Popup likes number
+  .likes-total { position: absolute; display: block; width: 80px; height: 40px; left: -50%; right: -50%; margin: auto;
+    border: 1px solid rgba(255, 255, 255, .18); background-color: rgb(18, 19, 20);
+    line-height: 2.633; text-align: center; font-size: 15px; font-weight: 100; font-style: normal; color: $white;
+    transform: scale(0.5); opacity: 0; bottom: 20px;
+    transition: all .25s ease, transform 0s linear .25s;
+
+    &:after, &:before { content: ''; position: absolute; left: 50%; margin-left: -6px; bottom: -12px; width: 0; border: solid transparent; }
+    &:before { border-width: 6px; border-top-color: rgba(255, 255, 255, .18); }
+    &:after { margin-left: -7px; border-width: 7px; border-top-color: rgb(18, 19, 20); }
+  }
+
+  .ico-wave-min:hover + .likes-total {
+    transform: scale(1); opacity: 1; bottom: 30px;
+    transition: all .25s ease, transform 0s linear 0s;
+  }
+
+}
+
+@media screen and (max-width: 1440px){
+  .song-flex-table {
+    .td, .th {
+      &:nth-child(1) { flex-basis: 10%;  }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .song-flex-table { min-width: 900px;
+
+  }
+}
+
+

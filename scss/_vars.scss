@@ -1,0 +1,35 @@
+/* sizes */
+$width: 1300px;
+$onePer: 4.1666%;
+$onePx: 80px;
+/************/
+
+/* transitions */
+$cubicLight: cubic-bezier(.39, .575, .565, 1);
+$cubicElastic: cubic-bezier(0.18, 0.89, 0.62, 1.4);
+/************/
+
+/* fonts */
+$Roboto: 'Roboto', sans-serif;
+/************/
+
+/* colors */
+$white: #fff;
+$black: #000;
+$black0d: #0d0d0e;
+$blackLight: #121314;
+$greyDark: #252323;
+$greyBlue: #343745;
+$grey: #717a89;
+$grey6: #666;
+$grey9: #999;
+$greyLight: #f2f2f2;
+$greyBlueLight: #E3F0F9;
+$green: #5c8724;
+$greenDark: #3b5a12;
+$yellow: #bed600;
+$red: #dc2a2a;
+$pink: #EA3F4F;
+$brown: #331610;
+/************/
+$bgColor: $blackLight;

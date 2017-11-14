@@ -1,0 +1,16 @@
+.legal_buttons {
+  width: 148px;
+  li {
+    list-style-type: none;
+    display: inline-block;
+
+    a {
+      text-decoration: none;
+      font-size: 10px;
+      font-family: "ProximaNova";
+      color: rgba(255, 255, 255, 0.502);
+      line-height: 2;
+      z-index: 10;
+    }
+  }
+}

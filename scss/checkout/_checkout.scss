@@ -1,0 +1,218 @@
+.checkout-inner { padding: 0 23% 0 0; height: 100%; box-sizing: border-box;
+  &:after{ content: ''; position: relative; display: table; width: 100%; clear: both;}
+
+  .foll-form{ position: relative; display: block; margin-bottom: 25px;}
+}
+
+.check-left{ position: relative; display: block; z-index: 1;width: 100%; height: 100%; padding: 30px 30px 30px 40px;
+  box-sizing: border-box; overflow: auto;}
+.check-right{ position: fixed; top: 0; right: 0; bottom: 0; width: 23%; padding: 15px 0; background: $bgColor;
+  box-sizing: border-box; }
+
+.check-left-top,.check-left-bot{ position: relative; display: block; z-index: 1;}
+.check-bg{ position: absolute; display: block; height: 0; top: 0; left: 0; right: 0; padding-bottom: 37%; z-index: 0;
+  background-repeat: no-repeat; background-position: 50% 0; background-size: cover;}
+
+/* left-top */
+.check-prof-info{ position: relative; padding-left: 100px; min-height: 79px;
+  @include flexbox(); flex-direction: column; justify-content: center;
+  box-sizing: border-box;
+  .check-prof-image{ position: absolute; display: block; top: 0; bottom: 0; left: 0; width: 79px; height: 79px; margin: auto;
+    border-radius: 50%; background-color: rgb(18, 19, 20); }
+  .check-prof-name{ position: relative; display: block; margin: 0 0 15px;
+    font-size: 40px; line-height: 36px; font-weight: 100; letter-spacing: -.025em;
+    span{ display: inline-block; margin-left: 10px;
+      font-weight: 400; font-size: 14px; line-height: 18px; color: #979797; }
+  }
+  .check-prof-follow{ position: relative; margin: 0;
+    .foll-item{ display: inline-block; vertical-align: middle; font-weight: 300; font-size: 15px; line-height: 18px; color: #979797; text-transform: uppercase; }
+    b{ font-weight: 300; padding-right: 5px; color: $white; }
+    .sep{ display: inline-block; vertical-align: middle; width: 4px; height: 4px; top: auto; margin: 0 10px; border-radius: 50%; }
+  }
+}
+.check-prof-table{ position: relative; margin: 30px 0 50px;
+  font-size: 14px; line-height: 18px; color: #979797;
+  tr{ height: 32px;}
+  td:first-child{ width: 85px; opacity: .2;
+    font-weight: 300;text-transform: uppercase;color: $white;}
+}
+.check-track{ position: relative; height: 94px; padding: 10px 65px 14px 75px;
+  box-sizing: border-box;
+  .box-btn{ position: absolute; display: block; width: 56px; height: 56px; top: 0; left: 0; bottom: 0; margin: auto; z-index: 2;
+    border-radius: 50%; border: 1px solid rgba(255,255,255,0.6); background: rgba(0,0,0,0.4);
+    box-sizing: border-box; overflow: hidden;
+
+    &:after{content:''; position: absolute;	width: 24px; height: 28px; top: 0; left: 0; right: 0; bottom: 0; margin: auto;}
+
+    &.play:after{ left: 4px; background: url('img/feed-boxes/play.svg') 50% 50% no-repeat; background-size: contain;}
+    &.pause:after{ background: url('img/feed-boxes/pause-button.svg') 50% 50% no-repeat; background-size: contain;}
+    &:hover{border: 1px solid rgba(255,255,255,.8);}
+    &:active,&.active{border: 1px solid rgba(255,255,255,1);}
+  }
+  .track-info{ height: 20px; margin-bottom: 15px;
+    .title{ display: inline-block; margin-right: 4px;
+      font-size: 20px; line-height: 20px; font-weight: 300; color: $white;}
+    .subtitle{ opacity: .6;
+      font-size: 16px; line-height: 20px; font-weight: 300; color: $white;
+    }
+    &:hover .subtitle{ opacity: .8;}
+  }
+  .track-timeline{ position: relative;
+    .sound-wave{position: relative; display: flex; justify-content: space-between; width: 100%; height: 38px;
+      box-sizing: border-box;
+      span{ position: relative; display: block; width: 100%; height: 100%; opacity: 1;
+        transition: opacity .15s ease-in-out;
+        background: url('img/other-elements/waveform.svg') 0 100% repeat-x; background-size: auto 100%;}
+    }
+    .duration{ position: absolute; display: block; right: -40px; bottom: 0; opacity: .8; cursor: default;
+      font-style: normal; font-size: 12px; line-height: 12px; color: $white;}
+  }
+}
+
+/* left-bot */
+.check-left-bot{ position: relative; margin-top: 50px;
+  &:after{ content: ''; position: relative; display: table; width: 100%; clear: both;}
+  .license-type{ position: relative; display: block; float: left; width: 67%;}
+  .your-card{ position: relative; display: block; float: right; width: 33%;}
+  .tit{ position: relative; display: block; margin-bottom: 25px;
+    font-size: 14px; text-transform: uppercase; line-height: 15px; letter-spacing: .05em; color: $white;}
+}
+.type-wrap{ position: relative; display: block; width: 100%; margin-bottom: -35px;
+  font-size: 0;
+  input[type="checkbox"]{ display: none;}
+  input[type="checkbox"]:checked + .type-one{
+    &:before,&:after{ opacity: 1;}
+  }
+  .type-one{ position: relative; display: inline-block; width: 0; height: 0; padding: 9.45%; margin: 0 6.1% 4% 0; text-align: center;
+    border-radius: 4px; overflow: hidden; cursor: pointer;
+    &:before,&:after{ content: ''; position: absolute; display: block; top: 0; left: 0; bottom: 0; right: 0; margin: auto; }
+    &:before{ background: #c23a48; z-index: 0; opacity: 0;
+      transition: opacity .5s $cubicLight;
+      border-radius: 4px;}
+    &:after{ border: 1px solid $white; z-index: 1; opacity: .1;
+      transition: opacity .5s $cubicLight;
+      border-radius: 4px;}
+    &:hover{
+      &:after{ opacity: .4;}
+    }
+  }
+  .type-one-inn{ position: absolute; display: block; width: 100%; height: 100%; top: 0; left: 0; z-index: 2;
+    box-sizing: border-box; padding: 20px;
+    @include flexbox(); justify-content: center; flex-wrap: nowrap; align-items: center; text-align: center;
+    b{ font-weight: 300; font-size: 14px; line-height: 18px; letter-spacing: .05em; color: $white; word-break: break-word;}
+  }
+}
+.cart-wrap{ position: relative; display: block; background: #141516;
+  box-sizing: border-box;
+  border-radius: 4px; overflow: hidden;
+  &:before{ content: ''; position: absolute; display: block; top: 0; left: 0; bottom: 0; right: 0; margin: auto;
+    border: 1px solid $white; z-index: 0; opacity: .1;
+    transition: opacity .5s $cubicLight;
+    border-radius: 4px;}
+  .cart-top,.cart-body,.cart-bot{ position: relative; padding: 15px;
+    box-sizing: border-box;}
+  .cart-top,.cart-body{
+    &:after{ content: ''; position: absolute; display: block; left: 2px; right: 2px; bottom: 0; height: 1px; background: #3c3c44; opacity: .2;}
+  }
+  .cart-top{
+    table{ width: 100%;
+      font-weight: 300; font-size: 14px; line-height: 24px; letter-spacing: .05em; color: $white;
+      tr{ height: 36px;}
+      td:first-child{ width: 95px; opacity: .4;}
+    }
+    select{ background-color: transparent; border: 1px solid #aaa; border-radius: 4px; line-height: 28px; padding: 3px 35px 4px 5px; }
+    .select2-container--default .select2-selection--single{ background-color: transparent;}
+    .select2-container .select2-selection--single .select2-selection__rendered{ margin-top: 0; color: #fff; }
+  }
+  .body-tit{ opacity: .4; margin-bottom: 12px;
+    font-size: 14px; line-height: 16px; letter-spacing: .05em; color: $white;}
+  .cart-line{ position: relative; display: block; height: 20px; margin-bottom: 12px;
+    box-sizing: border-box; padding-right: 100px;
+    font-weight: 700; font-size: 14px; line-height: 20px; letter-spacing: .05em; color: $white;
+    span{ }
+    b{ position: absolute; display: block; top: 0; right: 0;}
+    &:after{ content: ''; position: relative; display: table; width: 100%; clear: both;}
+  }
+  .btn.btn-buy{ position: relative; display: block; width: 100%; height: 46px; max-width: 170px; margin: 40px auto 10px; padding: 15px 0;
+    background: $pink;
+    border-radius: 4px;
+    font-size: 12px; text-transform: uppercase; line-height: 16px; letter-spacing: .05em; color: $white;
+    &:hover{ background: darken($pink,5%); }
+    &:active{ background: lighten($pink,5%); }
+  }
+}
+
+/* right */
+.check-r-one{ position: absolute; display: block; bottom: 0; left: 0; width: 100%; height: 48%; padding-top: 55px;
+  box-sizing: border-box;
+  &:first-child{ bottom: auto; top: 0; }
+  .r-one-top{ position: absolute; display: block; top: 0; left: 0; right: 0;
+    padding: 10px 25px 20px; border-bottom: 1px solid rgba(60,60,68,0.2);
+    font-size: 18px; line-height: 24px; font-weight: 300; color: #979797;}
+  .r-one-body{position: relative; display: block; padding: 10px 25px 20px;}
+  .check-r-inner, .r-one-body { height: 100%; overflow: auto;}
+
+  .song-one{ position: relative; display: block; min-height: 70px; padding: 15px 50px 15px 82px;
+    box-sizing: border-box; overflow: hidden;
+    &:before{content:''; position: absolute; display: block; width: 100%; height: 100%; top: 0; left: 0; background: $black; opacity: 0; z-index: -1;
+      transition: opacity .25s ease; will-change: opacity;}
+
+    .box-btn{ position: absolute; display: block; width: 40px; height: 40px; top: 0; left: 23px; bottom: 0; margin: auto; z-index: 2;
+      border-radius: 50%;  overflow: hidden;
+      box-sizing: border-box;
+      img{ position: absolute; display: block; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; }
+
+      &:before{content:''; position: absolute; display: block; width: 100%; height: 100%; top: 0; left: 0; background: $black; opacity: .4; z-index: 1;}
+      &:after{content:''; position: absolute; width: 23px; height: 23px; top: 0; right: 0; bottom: 0; margin: auto; z-index: 2;
+        left: 4px; background: url('img/feed-boxes/play.svg') 50% 50% no-repeat; background-size: contain;
+        transition: transform .25s ease;}
+      &:active,&.active{}
+    }
+    &:hover{
+      &:before{opacity: .5;}
+      .box-btn{
+        &:after{ transform: scale(1.1); }
+      }
+      .author{ opacity: .6;}
+      .song-buy-btn{ transform: translate(-100%,0); }
+    }
+    .author{ display: block; padding: 0; opacity: .4; margin: 1px 0 4px;
+      font-size: 14px; line-height: 18px; letter-spacing: -.025em; color: $white;
+      transition: opacity .25s ease;
+    }
+    .title{ display: block; padding: 0;
+      font-weight: 700;font-size: 14px; line-height: 15px; letter-spacing: -.025em; color: $white;
+      transition: opacity .25s ease;
+    }
+    .song-buy-btn{ position: absolute; display: block; width: 50px; right: -50px; height: 100%; top: 0; bottom: 0; margin: auto;
+      transition: transform .35s ease; will-change: transform;
+      box-sizing: border-box;
+      font-size: 0;
+      &:before{ content: ""; position: absolute; display: block; width: 23px; height: 22px; opacity: .6; left: 5px; top: 0; bottom: 0; margin: auto;
+        transition: opacity .15s ease-in-out;
+        background: url('img/song-lists/basket.svg') 50% 50% no-repeat;}
+      &:hover:before{ opacity: .8;}
+      &:active:before{ opacity: 1;}
+    }
+  }
+  .read-all-comm{ position: relative; padding: 0; margin: 0;
+    box-sizing: border-box;}
+  .comm-one{ padding-left: 50px; padding-top: 12px; background: none;
+    &:before,&:after{ display: none;}
+    .img{ position: absolute; display: block; left: 0; top: 0; width: 40px; height: 40px; overflow: hidden;
+      border-radius: 50%;
+      img{ display: block; width: 100%; height: 100%;}
+    }
+    .img:hover + .name{
+      span{ border-bottom-color: rgba(255, 255, 255, 0.7);}
+    }
+    .name{ position: relative; display: inline-block; vertical-align: top; margin: 0 0 12px;
+      font-size: 12px; letter-spacing: -.025em; color: $white;
+      span{ border-bottom: 1px solid rgba(255, 255, 255, 0); transition: border .25s ease; }
+      &:hover{
+        span{ border-bottom-color: rgba(255, 255, 255, 0.7);}
+      }
+    }
+    .mess{ font-weight: 400; font-size: 12px; line-height: 15px; color: #606366;}
+  }
+}

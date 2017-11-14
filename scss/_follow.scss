@@ -1,0 +1,251 @@
+.follow-inner { padding: 85px 460px 50px 20px; box-sizing: border-box;
+  &:before{ content: ''; position: absolute; display: block; height: 2px; left: 0; right: 0; top: 83px;
+    background: #1b1c1e;}
+  &:after{ content: ''; position: relative; display: table; width: 100%; clear: both;}
+}
+.foll-left{ position: relative; display: block; width: 100%; padding: 20px 20px 20px 280px;
+  box-sizing: border-box; z-index: 0;}
+.foll-right { position: fixed; display: block; width: 460px; top: 100px; right: 6px;
+  padding: 10px 0; background: #1b1c1e;
+  box-sizing: border-box; backface-visibility: hidden;}
+
+.foll-form{ position: relative; display: block; margin-bottom: 25px; padding-bottom: 44px; background: #161719;
+  box-sizing: border-box;
+  .add-file{bottom: 0; left: 0;}
+  .foll-submit{ bottom: 0; right: 5px;}
+  .btn{ position: absolute; display: block; opacity: .6; padding: 10px;
+    font-size: 12px; line-height: 24px; letter-spacing: -.02em; text-transform: uppercase;
+    &:hover{ opacity: .8;}
+    &:active{ opacity: 1;}
+  }
+}
+.foll-inp{ position: relative; display: block; width: 100%; height: 40px; padding: 10px;
+  background: $white; border: 1px solid #414242; border-bottom: none;
+  font-size: 14px; line-height: 20px; color: $greyDark; letter-spacing: -.02em;}
+.btn.add-file { padding-right: 30px;
+  &:after { content: ''; position: absolute; display: block; width: 19px; height: 18px; top: 0; bottom: 0; right: 0; margin: auto;
+    background: url('img/buttons/clip-ico.svg') 0 0 no-repeat; background-size: contain;
+    transition: transform .15s ease-in-out;}
+  &:hover{
+    &:after{transform: scale(1.1);}
+  }
+}
+
+.avatar-follow{ position: absolute; top: 0; left: 0; padding: 5px 10px;
+  background: #1e1e1f; box-shadow: 0 0 25px 5px rgba(0,0,0,.5); z-index: 9;
+  transform: scale(0); opacity: 0;
+  transition: transform 0s linear .25s, opacity .25s ease 0s;
+  &.show{transform: scale(1) translate(0,-100%); opacity: 1;
+    transition: transform 0s linear 0s, opacity .25s ease 0s; }
+  &:before{ content: ''; position: absolute; bottom: -19px; left: 15px;
+    border: 10px solid transparent; border-top: 10px solid #1e1e1f; }
+  button{ position: relative; display: block; color: #fff;
+    font-size: 12px; line-height: 1;
+    &:not(:first-child){ margin-top: 5px;}
+    &:hover{ text-decoration: underline; }
+  }
+}
+
+.follow-one{ position: relative; display: block; margin-bottom: 27px; padding: 0; background: #1b1c1e;
+  &:before{ content: ''; position: absolute; top: -2px; left: 0; right: 0;
+    border-top: 1px solid #0b0c0c; border-bottom: 1px solid #2a2b2d;}
+  .author{ position: absolute; display: block; width: 280px; left: -280px; top: -20px; padding-left: 66px; min-height: 58px;
+    @include flexbox(); flex-direction: column; justify-content: center; box-sizing: border-box;
+    .prof-status { top: 40px; right: 2px; cursor:default; z-index: 1; }
+    i::before { content:''; position: absolute; top: 36px; right: -3px; width: 18px; height: 18px; border-radius: 50%; background: #222; clip: rect(0,10px,18px,0); transform: rotate(33deg); }
+    .img{ position: absolute; display: block; top: 0; left: 0; width: 58px; height: 58px;
+      img{ display: block; width: 100%; margin: auto; border-radius: 50%;}
+    }
+    .avatar-follow{ }
+    .img:hover + .name{
+      span{ border-bottom-color: rgba(255, 255, 255, 0.7);}
+    }
+    .name{ display: block; margin-bottom: 5px;
+      font-size: 14px; line-height: 18px; letter-spacing: -.025em; color: $white;
+      span{ position: relative; display: inline; z-index: 1; line-height: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0); transition: border .25s ease;
+        &:before{ content: ''; position: absolute; display: block; top: 0; bottom: 0; left: 0; right: -5px; z-index: -1;
+          background: #121314;}
+      }
+      &:hover{
+        span{ border-bottom-color: rgba(255, 255, 255, 0.7);}
+      }
+      &:before{ content: ''; position: absolute; display: block; width: 100%; height: 1px; background: #2a2b2d; top: 19px; left: 66px; z-index: 0; }
+    }
+    .desc{ opacity: .4;
+      font-size: 14px; line-height: 15px; letter-spacing: -.025em;}
+  }
+}
+
+.foll-top{ position: relative; padding: 0 100px 0 15px; background: #161719;
+  box-sizing: border-box;
+  .foll-tit{ position: relative; display: block; padding: 10px 0;
+    font-size: 14px; line-height: 16px; letter-spacing: -.02em;}
+  .foll-time{ position: absolute; display: block; top: 0; bottom: 0; right: 15px; margin: auto; opacity: .4;
+    font-size: 12px; line-height: 16px; height: 16px; letter-spacing: -.025em;}
+}
+
+.foll-body{ position: relative;
+  .foll-track{ height: 70px;}
+  .action-btns{ background: #161719; color: #2d2d2f; font-size: 21px;}
+  .action-btn { width: 100px; }
+}
+.foll-track{ position: relative; padding: 10px 65px 14px 63px;
+  background: url('img/other-elements/bg-track-info.png') 50% 50% no-repeat; background-size: cover;
+  box-sizing: border-box;
+  .box-btn{ position: absolute; display: block; width: 36px; height: 36px; top: 0; left: 15px; bottom: 0; margin: auto; z-index: 2;
+    border-radius: 50%; border: 1px solid rgba(255,255,255,0.6); background: rgba(0,0,0,0.4);
+    box-sizing: border-box; overflow: hidden;
+
+    &:after{content:''; position: absolute;	width: 23px; height: 23px; top: 0; left: 0; right: 0; bottom: 0; margin: auto;}
+
+    &.play:after{ left: 4px; background: url('img/feed-boxes/play.svg') 50% 50% no-repeat; background-size: contain;}
+    &.pause:after{ background: url('img/feed-boxes/pause-button.svg') 50% 50% no-repeat; background-size: contain;}
+    &:hover{border: 1px solid rgba(255,255,255,.8);}
+    &:active,&.active{border: 1px solid rgba(255,255,255,1);}
+  }
+  .track-info{ height: 15px; margin-bottom: 8px;
+    .title{ display: inline-block; margin-right: 4px;
+      font-size: 14px; line-height: 15px; font-weight: 300; color: $white;}
+    .subtitle{ opacity: .6;
+      font-size: 12px; line-height: 15px; font-weight: 300; color: $white;
+      &:hover{ opacity: .8;}
+    }
+  }
+  .track-timeline{ position: relative;
+    .sound-wave{position: relative; display: flex; justify-content: space-between; width: 100%; height: 25px;
+      box-sizing: border-box;
+      span{ position: relative; display: block; width: 100%; height: 100%; opacity: 1;
+        transition: opacity .15s ease-in-out;
+        background: url('img/other-elements/waveform.svg') 0 100% repeat-x; background-size: auto 100%;}
+    }
+    .duration{ position: absolute; display: block; right: -50px; bottom: 10px; opacity: .8; cursor: default;
+      font-style: normal; font-size: 12px; line-height: 12px; color: $white;}
+  }
+}
+
+.foll-comments{ position: relative;
+  .btn-reply{ position: relative; display: block; width: 100%; height: 38px; padding: 10px 0; background: #313436; opacity: .8;
+    font-size: 12px; line-height: 18px; letter-spacing: -.02em; text-align: center; text-transform: uppercase;
+    transition: opacity .15s ease;
+    &:hover{ opacity: 1;}
+  }
+  .comm-info{ position: relative; padding: 12px 15px;
+    line-height: 15px;
+    .comm-cnt{ display: inline-block; vertical-align: middle; opacity: .2;
+      font-size: 14px; letter-spacing: -.02em;}
+    .comm-all{ position: relative; display: inline-block; vertical-align: middle; margin-left: 15px; border-bottom: 1px solid rgba(255,255,255,0.4);
+      text-transform: uppercase; font-size: 10px; line-height: 10px; color: $white;
+      &:hover{border-bottom-color: rgba(255,255,255,0.8);}
+      &:active{border-bottom-color: rgba(255,255,255,1);}
+    }
+  }
+}
+.foll-comm-one{ position: relative; display: block; padding: 8px 15px;
+  box-sizing: border-box;
+  .time{ position: absolute; display: inline-block; vertical-align: top; right: 15px; top: 15px; opacity: .6; z-index: 1;
+    font-size: 10px; line-height: 10px;}
+  .img{ position: absolute; display: block; width: 40px; height: 40px; left: 0; top: 0; overflow: hidden;
+    border-radius: 50%;
+    img{ display: block; width: 100%; }
+  }
+  .name{ position: relative; display: inline-block; vertical-align: top; max-width: 100%; height: 40px; padding: 0 75px 0 50px;
+    box-sizing: border-box;
+    font-size: 12px; line-height: 15px; letter-spacing: -.02em; color: $white;
+    .img-box { position: absolute; top: 0; left: 0; width: 40px; height: 40px;
+      .prof-status { top: 28px; right: 2px; width: 8px; height: 8px; cursor:default; z-index: 1; }
+      i::before { content:''; position: absolute; top: 24px; right: 0; width: 14px; height: 16px; border-radius: 50%; background: #222; clip: rect(0,10px,18px,0); transform: rotate(33deg); }
+    }
+    span{ display: inline; border-bottom: 1px solid rgba(255, 255, 255, 0);
+      transition: border .25s ease;}
+    &:before{ content: ''; position: relative; display: inline-block; vertical-align: middle; height: 100%; width: 1px; margin-right: -3px;}
+    .foll-comm-name:hover { border-bottom-color: rgba(255, 255, 255, 0.7);}
+  }
+  .mess{ padding-left: 50px; padding-right: 15px;
+    box-sizing: border-box;
+    font-size: 12px; line-height: 15px; color: #606366;
+  }
+}
+
+
+.foll-r-one{ position: relative; display: block; margin-bottom: 35px;
+  .r-one-top{ position: relative; display: block; height: 20px; padding: 0 10px 5px 20px; border-bottom: 1px solid #3c3c44;
+    font-size: 12px; line-height: 20px; font-weight: 300; color: #979797; text-transform: uppercase;
+    .see-more{ position: absolute; display: block; right: 10px; top: 5px; border-bottom: 1px solid rgba(255,255,255,0.4);
+      font-size: 10px; line-height: 10px; text-transform: uppercase; color: $white;
+      &:hover{border-bottom-color: rgba(255,255,255,0.6);}
+      &:active{border-bottom-color: rgba(255,255,255,0.8);}
+    }
+  }
+  .r-one-body{position: relative; display: block; padding: 20px 10px 0 20px;}
+  .peop-one{ position: relative; display: block; min-height: 56px; padding: 15px 90px 15px 65px; margin-bottom: 20px;
+    box-sizing: border-box;
+    .prof-status { top: 40px; right: 2px; cursor:default; z-index: 1; }
+    i::before { content:''; position: absolute; top: 36px; right: -3px; width: 18px; height: 18px; border-radius: 50%; background: #222; clip: rect(0,10px,18px,0); transform: rotate(33deg); }
+    .img{ position: absolute; display: block; width: 56px; height: 56px; left: 0; top: -50px; bottom: -50px; margin: auto;
+      img{ display: block; width: 100%; border-radius: 50%; }
+    }
+    .img:hover + .name{opacity: .8;
+      span{ border-bottom-color: rgba(255, 255, 255, 0.7);}
+    }
+    .name{ display: block; padding: 6px 0; opacity: .4;
+      font-size: 14px; line-height: 18px; letter-spacing: -.025em; color: $white;
+      transition: opacity .25s ease;
+      span{ border-bottom: 1px solid rgba(255, 255, 255, 0);
+        transition: border .25s ease;}
+      &:hover{ opacity: .8;
+        span{ border-bottom-color: rgba(255, 255, 255, 0.7);}
+      }
+    }
+    .peop-foll-btn{ position: absolute; display: block; width: 88px; right: 0; height: 24px; top: 0; bottom: 0; margin: auto;
+      box-sizing: border-box;
+      border: 1px solid rgba(255,255,255,0.4); border-radius: 3px;
+      font-size: 10px; text-transform: uppercase; line-height: 22px;
+      &:hover{border: 1px solid rgba(255,255,255,0.8);}
+      &:active{border: 1px solid rgba(255,255,255,1);}
+    }
+  }
+  .read-all-comm{ position: relative; padding-left: 20px; margin: 0;
+    box-sizing: border-box;}
+}
+.read-all-comm{
+  .comm-one{ position: relative; display: block; margin-bottom: 10px; padding: 10px 10px 25px 20px; background: #252526;
+    box-sizing: border-box;
+    &:before,&:after{ content: ''; position: absolute; display: block;}
+    &:before{ width: 8px; height: 8px; left: -20px; top: 5px; background: $white; opacity: .2; border-radius: 50%;}
+    &:after{ width: 0; height: 0; top: 3px; left: -6px;
+      border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-right: 6px solid #252526;}
+
+    .mess{ font-size: 15px; line-height: 18px; font-weight: 300; color: $white;}
+    .read-all{ position: absolute; right: 10px; bottom: 10px; opacity: .2; border-bottom: 1px solid rgba(255,255,255,0.4);
+      font-size: 10px; line-height: 10px; text-transform: uppercase; color: $white;
+      &:hover{ opacity: .4;border-bottom-color: rgba(255,255,255,0.8);}
+      &:active{border-bottom-color: rgba(255,255,255,1);}
+    }
+  }
+}
+
+
+@media screen and (min-width: 2000px){
+  .follow-inner{
+    .feed-box { $cnt: 5; width: calc( (100% - #{$cnt}*4px)/#{$cnt} ); }
+  }
+}
+
+@media screen and (max-width: 1500px){
+  .follow-inner{
+    .feed-box { $cnt: 3; width: calc( (100% - #{$cnt}*4px)/#{$cnt} ); }
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .follow-inner{
+    .feed-box { $cnt: 2; width: calc( (100% - #{$cnt}*4px)/#{$cnt} ); }
+  }
+}
+
+@media screen and (max-width: 720px){
+  .follow-inner{
+    .feed-box { $cnt: 1; width: calc( (100% - #{$cnt}*4px)/#{$cnt} ); }
+  }
+}

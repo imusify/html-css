@@ -1,0 +1,174 @@
+#menu { position: absolute; display: block; width: 190px; height: 100%; top: 0; left: 0; padding: 70px 0 60px; z-index: 2;
+  box-sizing: border-box;
+  .menu-bg{ position: absolute; display: block; width: 100%; height: 100%; top: 0; left: 0; opacity: .4;
+    -webkit-filter: blur(25px); filter: blur(25px); overflow: hidden;
+    background: #19191b url('../images/bigProfile.jpg') 50% 100% no-repeat; background-size: auto 100%; }
+}
+
+header { position: absolute; display: block; left: 0; right: 0; top: 0;
+  text-align: center; }
+
+.head-logo { position: relative; display: block; width: 100%; height: 38px; margin: 20px 0 6px;
+  background: url('img/menu/logo.svg') 50% 50% no-repeat; background-size: contain;
+  font-size: 0; }
+
+.head-info { position: relative; display: none; width: 100%; opacity: .2; cursor: default;
+  font-weight: 100; font-size: 16px; text-transform: uppercase; line-height: 15px; }
+
+footer { position: absolute; display: block; left: 0; right: 0; bottom: 0; padding: 0 10px 10px;
+  box-sizing: border-box; }
+
+.foot-links { position: relative; display: flex; justify-content: space-between; margin-bottom: 10px;
+  color: rgba(255,255,255,0.13); font-size: 10px; line-height: 12px;
+  a { position: relative; display: inline-block; vertical-align: top; opacity: .5;
+     color: $white;
+    &:hover { opacity: .8; }
+    &:active,&.active { opacity: 1; }
+    &.active { cursor: default; }
+  }
+}
+
+.foot-copy { position: relative; display: block; width: 100%; opacity: .2;
+  font-size: 10px; line-height: 14px;
+}
+
+.menu-inn{ position: relative; display: block; width: 100%; max-height: 100%; padding: 20px 0;
+  box-sizing: border-box;}
+.menu-user{ position: relative; display: block; padding: 0 30px; height: 140px; margin-bottom: 20px;
+
+}
+
+.profile{ position: relative;
+  .sign-btn{ position: relative; display: block; width: 140px; margin: 0 auto 20px; padding: 10px 0;
+    background: transparent;
+    font-size: 14px; line-height: 20px; color: $white; text-align: center; text-transform: uppercase;
+    &:before { content: ''; position: absolute; display: block; top: 0; left: 0; right: 0; bottom: 0; margin: auto; opacity: .4;
+      border: 1px solid #fff; border-radius: 5px; transition: opacity .1s ease; }
+    &:hover:before{ opacity: .6;}
+    &:active:before{ opacity: .8;}
+  }
+  .prof-link:hover {
+    .prof-status.edit {display: block;}
+    [data-status="current"] {display: none;}
+
+  }
+}
+
+.img-box i::before { content:''; position: absolute; top: 41px; right: 45px; width: 18px; height: 18px; border-radius: 50%; background: #222; clip: rect(0,10px,18px,0); transform: rotate(33deg); }
+
+.prof-status { position: absolute; top: 45px; right: 49px; width: 10px; height: 10px; border-radius: 50%;
+  &.edit { display: none; top: 39px; right: 43px; width: 20px; height: 20px; box-sizing: border-box; border: 1px solid #fff; border-radius: 50%; background-color: #222; opacity: .8; transition: .5s ease; cursor: pointer;
+    &:active { opacity: 1;
+      &::after { opacity: 1; }
+    }
+    &::after { content: ""; position: absolute; top: -1px; left: -1px; width: 20px; height: 20px; box-sizing: border-box; opacity: .6; background: url(img/buttons/upload-btn.svg) 50% 45% no-repeat; transform: rotate(180deg); }
+  }
+  &.online { background-color: #4fea3f; }
+  &.offline { background-color: $pink; }
+  &.away { background-color: #ea853f; }
+}
+
+.prof-status-opt { content: ''; position: absolute; display: none; top: 70px; right: -10px; width: 80px; padding: 5px 0 10px; background: #1e1e1f; box-shadow: 2px 15px 46px 12px rgba(0,0,0,.8); z-index: 1;
+  &.show { display: block;}
+  &::before { content: ''; position: absolute; top: -19px; left: 7px; border: 10px solid transparent; border-bottom: 10px solid #1e1e1f;
+  }
+  .prof-status-list { margin: 0; padding: 5px 0; }
+  .prof-status { display: block; position: initial; margin: 10px;
+    span { display: inline-block; margin-left: 14px; color: #fff; font-size: 14px; line-height: 14px; font-weight: 300; opacity: .6; }
+  }
+}
+
+@media screen and (min-width:721px) and (max-width: 1024px){
+  #menu { width: 100px;
+    .head-logo { height: 28px; }
+    .profile { margin: 0 auto 25px;}
+    .prof-link .prof-img { height: 51px; margin-left: 17%;}
+    .prof-link .prof-user { margin-left: -60px; }
+    .prof-notes { margin: 25px 0 0; display: flex; flex-wrap: wrap; width: 100px;}
+    .prof-note { width: 47%;
+      &:first-child::after { right: -5px; }
+      &:nth-child(2)::after { opacity: 0; }
+    }
+    .note-link.settings-ico { position: absolute; bottom: -25px; left: 31px; }
+    .popover { top: 30px; left: 30px; }
+    .prof-status { top: 35px; right: 82px; width: 8px; height: 8px; }
+    .img-box i::before { top: 32px; right: 79px; width: 14px; height: 14px;}
+    .prof-status.edit::after { top: 0; left: 0;  width: 5px; height: 5px; }
+    .prof-status-opt { top: 62px; right: 22px; }
+    .profile .sign-btn { width: 80px; margin-left: 11px; }
+    .menu-nav .nav-one { height: 70px;
+      i { top: 15px; width: 24px; height: 24px;}
+      span { opacity: 0; }
+    }
+    .foot-links { flex-direction: column;}
+  }
+}
+
+@media screen and (max-width: 720px){
+  .popover.top:before { left: 100px!important; }
+  .main { position: absolute; left: 0; margin-top: 100px;
+    &.disabled::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #121314; opacity: .9; z-index: 2;
+    }
+  }
+  #menu { width: 100%; height: 70px; padding: 0;
+    .menu-inn { display: flex; margin-top: 70px; padding: 0; }
+    .menu-nav { padding-top: 55px!important; }
+    .head-logo {height: 40px;}
+
+    .profile { position: absolute;  top: -50px; right: -45px; height: 65px; overflow: hidden;
+      &.open { overflow: visible; }
+      &.sign {top: -45px; display: inline-flex; right: 20px; height: 40px;}
+      .sign-btn { width: 80px; height: 20px; margin: initial; padding: 5px 1px; font-size: 10px;
+        &:first-child { margin-right: 10px; }
+      }
+      .prof-img { height: 40px; }
+      .img-box i::before { top: 22px; right: 57px; width: 14px; height: 14px;}
+      .prof-status { top: 26px; right: 59px; width: 8px; height: 8px; }
+      .prof-status.edit::after { top: 0; left: 0;  width: 5px; height: 5px; }
+      .prof-status-opt { top: 50px; right: 55px; }
+      .prof-status-opt::before { left: 60px; }
+    }
+
+    .prof-user, .prof-note:first-child, .prof-note:nth-child(2),.note-link.settings-ico { display: none; }
+    .popover { top: -20px; left: -110px; }
+    .menu-nav { position: absolute; top: -43px; left: 20px; width: 20px; height: 0; padding-top: 80px; background: url('img/menu/line.svg') no-repeat; background-size: contain; border: none; overflow: hidden; cursor: pointer;
+
+      &.open { background: none; overflow: visible;
+        &::before, &::after   { top: 14px; transition: transform .6s ease-out;}
+
+        &::before { transform: rotate(45deg); }
+        &::after { transform: rotate(-45deg); }
+
+        .nav-one { display: flex; width: 200px; margin-left: -30px; background-color: #121314; opacity: 1; color: rgba(255, 255, 255, .6);
+          i { margin: auto -20px auto 50px; }
+          span { margin: auto; }
+        }
+        &.small {
+          .nav-one { opacity: 0;}
+        }
+      }
+      &::before, &::after { content: ''; position: absolute; left: 0; width: 100%; height: 2px; border-radius: 2px; background-color: $white; transition: all 0.5s ease; }
+      &::before { top: 0; }
+      &::after { top: 18px; }
+    }
+    .note-link { display: initial; }
+    footer { display: none; position: fixed; left: 10px; width: 155px; }
+  }
+
+  .foot-links {justify-content: initial;}
+  .foot-links a { padding-right: 5px; }
+}
+
+@media screen and (max-width: 520px) {
+  #menu {
+    .profile {
+      &.sign { right: -70px;}
+      .sign-btn { width: 40px; height: 20px; margin: initial; padding: 5px 1px; font-size: 10px;
+        &:first-child { margin-right: 3px; }
+      }
+    }
+  }
+}
+
+
+

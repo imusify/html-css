@@ -1,0 +1,11 @@
+.duration { display: flex; margin: auto;
+  .duration-title { @extend .vocals-title; padding-right: 15px; }
+  .duration-range { position: relative; align-self: center; }
+  #amount, #rangeval { position: absolute; top: -25px; font-size: 11px; line-height: 1.2; text-align: center; color: $white; }
+  .duration-start { position: absolute; bottom: -15px; font-size: 12px; font-weight: bold; line-height: 1.2; color: rgba(255, 255, 255, 0.102); }
+  .duration-end { @extend .duration-start; right: 0; }
+  .ui-widget.ui-widget-content { border: none; }
+  .ui-widget-content { display: block; width: 245px; height: 10px; border-radius: 3px; background-color: rgb(40, 41, 44); outline: none; }
+  .ui-slider-handle { background-color: $white; width: 19px; height: 19px; border-radius: 50%; cursor: pointer; outline: none; }
+  .ui-slider-range.ui-widget-header {background: rgb(234, 63, 79)};
+}

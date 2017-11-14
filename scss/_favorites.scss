@@ -1,0 +1,67 @@
+#favorites { padding-bottom: 150px;
+  @extend #playlist;
+  max-width: 735px;
+
+  .favorites-inner { padding: 0 40px; }
+  .tit-playlist { padding-bottom: 35px; }
+  .foll-inn { display: flex;
+    &:hover {
+      .foll-track .track-info .subtitle { opacity: 1;}
+      .feed-box .feed-bg::before { opacity: 0;}
+    }
+  }
+  .foll-body { width: 84%; }
+  .feed-box { width: 105px;
+    .feed-bg::before {opacity: .4; }
+    .feed-bg:hover::before { opacity: 0; }
+  }
+  .feed-inn { width: 50%; height: 40%; }
+}
+
+.popup-close{ position: absolute; display: block; width: 22px; height: 22px; right: 20px; top: 20px; opacity: .6; z-index: 2;
+  font-size: 0;
+  transition: opacity .15s ease;
+  &:before,&:after{ content: ''; position: absolute; display: block; width: 100%; height: 1px; background: $white; top: 50%; left: 0; right: 0;}
+  &:before{transform: rotate(-45deg);}
+  &:after{transform: rotate(45deg);}
+
+  &:hover{ opacity: .8;}
+  &:active{ opacity: 1;}
+}
+
+.favorites-after { position: absolute; display: block; width: 100%; height: 100%; top: 0; left: 0; z-index: 7; background: #121314; transform: scale(0); opacity: 0; transition: transform 0s linear .5s,opacity .5s cubic-bezier(.39,.575,.565,1); }
+
+#favorites.show+.favorites-after { transform: scale(1); opacity: .75; transition: transform 0s linear,opacity .3s cubic-bezier(.39,.575,.565,1) .1s; }
+
+@media screen and (max-width:940px) {
+  #favorites {
+    .action-btns { display: flex; justify-content: space-around; }
+    .action-btn { max-width: 97px; }
+  }
+}
+
+@media screen and (max-width:786px) {
+  #favorites {
+    .action-btn { max-width: 77px; }
+  }
+}
+@media screen and (max-width:540px) {
+  #favorites {
+    .favorites-inner { padding: 0 20px; }
+    .tit-playlist span { font-size: 28px; }
+    .track-info {width: 120%; overflow: hidden;}
+    .foll-body { width: 100%; }
+    .popup-close { right: 10px; width: 20px; height: 20px; }
+    .action-btn { max-width: 57px;
+      span { display: none; }
+    }
+  }
+}
+
+@media screen and (max-width:400px) {
+  #favorites {
+    .favorites-inner { padding: 0; }
+    .action-btn { max-width: 46px; }
+    .feed-box { display: none;}
+  }
+}

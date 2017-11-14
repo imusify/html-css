@@ -1,0 +1,33 @@
+.menu-nav { position: relative; display: block; width: 100%;
+  border-top: 1px solid #2c2c2d; border-bottom: 1px solid #2c2c2d;
+  .nav-one { position: relative; display: block; height: 80px; padding: 15px 0; opacity: .6;
+    border-bottom: 1px solid #0b0c0c;
+    &:not(:first-child){border-top: 1px solid #2c2c2d;}
+    box-sizing: border-box;
+    transition: opacity .35s $cubicLight;
+    color: $white; text-align: center; text-decoration: none;
+
+    &:before,&:after { content: ''; position: absolute; display: block; width: 100%; height: 100%; top: 0; left: 0; opacity: 0;
+      box-sizing: border-box; z-index: 0;
+      transition: opacity .35s $cubicLight; }
+    &:before{ background: $blackLight;}
+    &:after{ border-top: 1px solid #0b0c0c;}
+
+    &:hover { opacity: .8; }
+    &:active,&.active { opacity: 1; }
+    &.active:before, &.active:after { opacity: 1; }
+
+    i { position: relative; display: block; width: 26px; height: 26px; margin: 0 auto 8px; z-index: 1;
+      background-position: 50% 50%; background-repeat: no-repeat; background-size: contain;
+      &.ic-home{ background-image: url('img/menu/ic-home.svg'); }
+      &.ic-browse{ background-image: url('img/menu/ic-browse.svg'); }
+      &.ic-playlist{ background-image: url('img/menu/ic-playlist.svg'); }
+      &.ic-like{ background-image: url('img/menu/ic-fav.svg'); }
+      &.ic-upload { background-image: url('img/menu/ic-upload.svg'); }
+    }
+    span { position: relative; display: inline-block; border-bottom: 1px solid transparent; z-index: 1;
+      transition: border .35s $cubicLight;
+      font-size: 14px; line-height: 15px;
+    }
+  }
+}

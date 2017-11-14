@@ -1,0 +1,10 @@
+.tags-wrap { position: relative; width: 100%; max-width: 860px; margin: 100px auto; padding: 0 30px; box-sizing: border-box;
+  .tags-title { margin: 0 0 15px; text-align: center; font-size: 16px; line-height: 20px; text-transform: uppercase; }
+  .swiper-button-prev{ left: 0; margin-top: -8px;}
+  .swiper-button-next{ right: 0; margin-top: -8px;}
+  .tag { color: $white; opacity: .6;
+    &:hover { opacity: 1; }
+  }
+
+
+}

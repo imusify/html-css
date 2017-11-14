@@ -1,0 +1,44 @@
+h1 {
+  display: block;
+  margin: 100px 0 50px 0;
+  font-weight: 100;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.gui{
+  overflow: scroll;
+}
+
+
+@import 'tabs';
+@import 'feed-boxes';
+@import 'feed-colors';
+@import 'profile-icons';
+@import 'tab-panels';
+@import 'search';
+@import 'player';
+@import 'queue';
+@import 'buttons';
+@import 'song-lists';
+@import 'other-elements';
+@import 'browse_explore/tags-swiper';
+@import 'browse_explore/filters';
+@import 'browse_explore/price-slider';
+@import 'browse_explore/duration-slider';
+
+//NoUi slider
+.noUi-connect {
+  background-color: rgb(234, 63, 79) !important;
+}
