@@ -10518,6 +10518,7 @@ div.ui-slider-range.ui-widget-header {
         opacity: 1; }	
 		
 .about-block .people-one .img .described {
+	
 	position:absolute;
 	visibility:hidden;
 	width:250px;
@@ -10525,8 +10526,12 @@ div.ui-slider-range.ui-widget-header {
 	background: #0d0d0e;
 	text-align:center;
 	z-index:1;
-	border: 0.1px solid #E6E6E6;
+	border-color:#1E1E1C;
+	border-style:solid;
+	border-width: 0.02px;
+	background-size: contain;
 }
+
 .about-block .people-one .img .described span{
 	position: absolute;
 	width:150px;
