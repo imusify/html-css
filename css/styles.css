@@ -10520,22 +10520,30 @@ div.ui-slider-range.ui-widget-header {
 .about-block .people-one .img .described {
 	position:absolute;
 	visibility:hidden;
-	width:164px;
+	width:250px;
 	height:300px;
 	background: #0d0d0e;
 	text-align:center;
 	z-index:1;
+	border: 0.1px solid #E6E6E6;
 }
 .about-block .people-one .img .described span{
-	margin-top:10px;
-	color:#819FF7;
+	position: absolute;
+	width:150px;
+	height: 200px;
+	font-weight: 100;
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: .05em;
+	margin:70px auto auto -70px;
 }
 .about-block .people-one .img:hover{
 	
 	overflow:visible;
 }
 .about-block .people-one .img:hover .described {
-	width:164px;
+	width:250px;
+	margin-left:-40px;
 	visibility:visible;
 	top:0px;
 	left:px;
