@@ -481,31 +481,30 @@ margin: 0; }
       background: #D8D8D8; }
     .about-block .github-imusify-btn:active {
       background: #8181F7; }
-	  
+
 .about-block .people-one .img .described {
 	position:absolute;
 	visibility:hidden;
-	width:200px;
-	min-height:80px;
-	height:auto;
-	background-color: #D8D8D8;
+	width:164px;
+	height:300px;
+	background: #121314;;
 	text-align:center;
-	border-radius:10px;
-	z-index:10;
+	z-index:1;
 }
 .about-block .people-one .img .described span{
 	margin-top:10px;
 	color:#819FF7;
 }
 .about-block .people-one .img:hover{
+	
 	overflow:visible;
 }
 .about-block .people-one .img:hover .described {
-	width:350px;
+	width:164px;
 	visibility:visible;
-	top:160px;
-	left:-100px;
-}
+	top:0px;
+	left:px;
+}	
 .about-block .icon-one .nameLong {
       margin: 15px -8px;
       font-weight: 100;
@@ -598,6 +597,15 @@ margin: 0; }
       background: url("img/linkedin-ico.png") 50% 50% no-repeat;
       background-size: contain;
       transition: opacity .218s ease-in-out; }
+.about-block .people-one .linkedin-link-one {
+  margin: 10px auto auto 15px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  background: url("img/linkedin-ico.png") 50% 50% no-repeat;
+  background-size: contain;
+  transition: opacity .218s ease-in-out; } 	  
 	  .about-block .people-one .github-link {
       float: right;
       display: block;
@@ -607,6 +615,16 @@ margin: 0; }
       background: url("img/github-ico.png") 50% 50% no-repeat;
       background-size: contain;
       transition: opacity .218s ease-in-out; }
+.about-block .people-one .github-link-one {
+  float: left;
+  margin:10px auto auto 20px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  background: url("img/github-ico.png") 50% 50% no-repeat;
+  background-size: contain;
+  transition: opacity .218s ease-in-out; }	  
 #aboutPopup .about-block .swiper-wrapper {
 	margin-left:130px;
 }

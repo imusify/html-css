@@ -612,7 +612,22 @@ body.open-bigPlayer #playlist, body.open-bigPlayer #notifications, body.open-big
   .static-info-block .static-txt {
     opacity: .6;
     font-size: 14px;
-    line-height: 26px; }
+    line-height: 26px; 
+	margin-bottom:300px;
+	text-align:justify ;
+	}
+	.static-info-block .static-txt a{
+		color:white;
+	}
+	.static-info-block .static-txt .aColor{
+		color:#8181F7;
+	}
+	.static-info-block .static-txt .AdDress{
+		color:#DA81F5;
+	}
+	.static-info-block .static-txt .AdDress a{
+		color:#DA81F5;
+	}
     .static-info-block .static-txt p:not(:first-child) {
       margin-top: 26px; }
 
@@ -5103,6 +5118,7 @@ body:not(.page-load) .profile-inner .prof-top-bg {
     background-size: contain;
     font-size: 0; }
   .about-block .logo-info {
+	  width:410px;
 	  margin: 50px auto;
     font-weight: 100;
     font-size: 12px;
@@ -10446,9 +10462,28 @@ div.ui-slider-range.ui-widget-header {
   background: url("img/linkedin-ico.png") 50% 50% no-repeat;
   background-size: contain;
   transition: opacity .218s ease-in-out; }
+.about-block .people-one .linkedin-link-one {
+  margin: 10px auto auto 70px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  background: url("img/linkedin-ico.png") 50% 50% no-repeat;
+  background-size: contain;
+  transition: opacity .218s ease-in-out; }  
   .about-block .people-one .github-link {
   float: left;
   margin:10px auto auto 10px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  background: url("img/github-ico.png") 50% 50% no-repeat;
+  background-size: contain;
+  transition: opacity .218s ease-in-out; }
+  .about-block .people-one .github-link-one {
+  float: left;
+  margin:10px auto auto 70px;
   display: block;
   width: 24px;
   height: 24px;
@@ -10481,3 +10516,27 @@ div.ui-slider-range.ui-widget-header {
         opacity: .5; }
       .about-block .people-one .linkedin-link:active {
         opacity: 1; }	
+		
+.about-block .people-one .img .described {
+	position:absolute;
+	visibility:hidden;
+	width:164px;
+	height:300px;
+	background: #0d0d0e;
+	text-align:center;
+	z-index:1;
+}
+.about-block .people-one .img .described span{
+	margin-top:10px;
+	color:#819FF7;
+}
+.about-block .people-one .img:hover{
+	
+	overflow:visible;
+}
+.about-block .people-one .img:hover .described {
+	width:164px;
+	visibility:visible;
+	top:0px;
+	left:px;
+}		
