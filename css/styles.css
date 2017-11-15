@@ -10502,9 +10502,9 @@ div.ui-slider-range.ui-widget-header {
       letter-spacing: .05em;
       text-transform: uppercase; 
 	  text-align:center;}
-#aboutPopup .about-block .swiper-wrapper {
+/*#aboutPopup .about-block .swiper-wrapper {
 	margin-left:130px;
-}
+}*/
 #aboutPopup .about-block .swiper-wrapper .people-one .linkedin-github{
 	margin-left:50px;
 }

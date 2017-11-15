@@ -483,15 +483,20 @@ margin: 0; }
       background: #8181F7; }
 
 .about-block .people-one .img .described {
+	
 	position:absolute;
 	visibility:hidden;
 	width:250px;
 	height:300px;
-	background: #0d0d0e;
+	background: #121314;;
 	text-align:center;
 	z-index:1;
-	border: 0.1px solid #E6E6E6;
+	border-color:#1E1E1C;
+	border-style:solid;
+	border-width: 0.02px;
+	background-size: contain;
 }
+
 .about-block .people-one .img .described span{
 	position: absolute;
 	width:150px;
@@ -512,7 +517,7 @@ margin: 0; }
 	visibility:visible;
 	top:0px;
 	left:px;
-}	
+}		
 .about-block .icon-one .nameLong {
       margin: 15px -8px;
       font-weight: 100;
@@ -633,9 +638,9 @@ margin: 0; }
   background: url("img/github-ico.png") 50% 50% no-repeat;
   background-size: contain;
   transition: opacity .218s ease-in-out; }	  
-#aboutPopup .about-block .swiper-wrapper {
+/*#aboutPopup .about-block .swiper-wrapper {
 	margin-left:130px;
-}
+}*/
 #aboutPopup .about-block .swiper-wrapper .people-one .linkedin-github{
 	margin-left:50px;
 }
