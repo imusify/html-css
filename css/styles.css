@@ -10543,14 +10543,13 @@ div.ui-slider-range.ui-widget-header {
 	margin:70px auto auto -70px;
 }
 .about-block .people-one .img:hover{
-	
+	visibility:hidden;
 	overflow:visible;
 }
 .about-block .people-one .img:hover .described {
-	
 	opacity: .95;
 	width:250px;
-	margin-left:-40px;
+	margin-left:-45px;
 	visibility:visible;
 	top:0px;
 	left:px;
