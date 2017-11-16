@@ -10547,6 +10547,8 @@ div.ui-slider-range.ui-widget-header {
 	overflow:visible;
 }
 .about-block .people-one .img:hover .described {
+	
+	opacity: .95;
 	width:250px;
 	margin-left:-40px;
 	visibility:visible;
