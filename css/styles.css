@@ -5178,7 +5178,8 @@ body:not(.page-load) .profile-inner .prof-top-bg {
       font-weight: 100;
       font-size: 16px;
       line-height: 1.5;
-      letter-spacing: .05em; }
+      letter-spacing: .05em; 
+	  text-transform: uppercase;}
     .about-block .people-one .position {
       width: 164px;
       margin: 0 auto;
@@ -5186,7 +5187,7 @@ body:not(.page-load) .profile-inner .prof-top-bg {
       font-size: 12px;
       line-height: 1.5;
       letter-spacing: .05em;
-      text-transform: uppercase; }
+       }
     .about-block .people-one .fb-link {
       position: relative;
       display: block;

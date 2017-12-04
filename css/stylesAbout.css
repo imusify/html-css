@@ -166,7 +166,7 @@ body {
       font-size: 16px;
       line-height: 1.5;
       letter-spacing: .05em; 
-	  
+	  text-transform: uppercase;
 	  }
     .about-block .people-one .position {
       width: 164px;
